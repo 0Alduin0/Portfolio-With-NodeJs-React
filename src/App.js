@@ -1,12 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-import Pc from './Animation - 1747157635002.json'
-import Lottie from 'lottie-react'
-import Navbar from './Navbar'
+import React from "react";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Skills from "./components/Skills";
+import Projects from "./components/Projects";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+
 function App() {
   return (
     <div className="App">
-      
+      <Navbar />
+      <Hero />
+      <About />
+      <Skills />
+      <Projects />
+      <Contact />
+      <Footer />
     </div>
   );
 }
