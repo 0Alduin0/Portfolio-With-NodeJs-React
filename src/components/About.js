@@ -23,13 +23,13 @@ const About = () => {
       icon: <FaGamepad className="text-4xl" />,
       title: "Oyun Geliştirme",
       description:
-        "Unity ile 2D ve 3D oyun geliştirme konusunda deneyimliyim. Oyun mekanikleri, level tasarımı ve optimizasyon konularında uzmanım.",
+        "Unity ile 2D ve 3D oyun geliştirme konusunda deneyimliyim. Oyun mekanikleri, level tasarımı ve optimizasyon konularında kendimi geliştirmekteyim.",
     },
     {
       icon: <FaCode className="text-4xl" />,
       title: "Full Stack Geliştirme",
       description:
-        "React, Node.js ve modern web teknolojileri ile tam yığın uygulama geliştirme konusunda deneyimliyim.",
+        "React, Node.js ve modern web teknolojileri ile fullstack uygulama geliştirme konusunda bilgiliyim.",
     },
     {
       icon: <FaLightbulb className="text-4xl" />,
@@ -51,9 +51,12 @@ const About = () => {
         >
           <h2 className="text-4xl font-bold text-white mb-4">Hakkımda</h2>
           <p className="text-gray-300 max-w-2xl mx-auto">
-            Bilgisayar mühendisliği öğrencisi ve tutkulu bir oyun
-            geliştiricisiyim. Unity ile oyun geliştirme ve modern web
-            teknolojileri konusunda deneyimliyim.
+            Balıkesir üniversitesi bilgisayar mühendisliği öğrencisiyim. Tutkulu
+            bir oyun geliştiricisi ve yeni teknolojilere açık bir yazılımcıyım.
+            Unity oyun motoru ve C# programlama dili ile hem mobil hem masaüstü
+            platformlarda 2D ve 3D oyunlar geliştirmekteyim. Ayrıca çeşitli
+            modern teknolojileri kullanarak fullstack yazılımcı olma yolunda
+            yürümekteyim.
           </p>
         </motion.div>
 

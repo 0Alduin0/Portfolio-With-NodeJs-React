@@ -1,23 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
-import {
-  FaUnity,
-  FaGamepad,
-  FaCode,
-  FaDatabase,
-  FaServer,
-  FaMobile,
-} from "react-icons/fa";
+import { FaReact, FaNodeJs, FaDatabase, FaUnity, FaCss3, FaHtml5, FaAdn, FaWeebly } from "react-icons/fa";
 
 const Skills = () => {
   const ref = useRef(null);
+  const isInView = useInView(ref, { threshold: 0.1 });
   const [hasAnimated, setHasAnimated] = useState(false);
-  const isInView = useInView(ref, {
-    threshold: 0.2,
-    triggerOnce: false,
-  });
 
   useEffect(() => {
     if (isInView && !hasAnimated) {
@@ -25,77 +14,61 @@ const Skills = () => {
     }
   }, [isInView]);
 
-  const skills = [
+  const capabilities = [
     {
-      icon: <FaUnity className="text-4xl" />,
-      title: "Unity Game Development",
-      description: "Unity ile 2D ve 3D oyun geliştirme, C# programlama",
+      title: "Unity Oyun Geliştirme",
+      description:
+        "Unity oyun motoru ile hem mobil hem masaüstü platformlarda 2D ve 3D oyun geliştirebilirim. Photon ve netcode yapılarını kullanark çok oyunculu oyunlar yazabilirim",
+      icon: <FaUnity className="text-4xl text-blue-500" />,
     },
     {
-      icon: <FaGamepad className="text-4xl" />,
-      title: "Game Design",
-      description: "Oyun mekanikleri tasarımı, level design, UI/UX",
+      title: "Backend Geliştirme",
+      description:
+        "Node.js ve Express.js ile RESTful API'ler oluşturabilir MongoDb de veri modelleyebilir JWT ile kullanıcı doğrulayabilir ve middleware yapıları kurabilirim.",
+      icon: <FaNodeJs className="text-4xl text-green-500" />,
     },
     {
-      icon: <FaCode className="text-4xl" />,
-      title: "Frontend Development",
-      description: "React, JavaScript, HTML5, CSS3, Tailwind CSS",
-    },
-    {
-      icon: <FaServer className="text-4xl" />,
-      title: "Backend Development",
-      description: "Node.js, Express.js, RESTful API tasarımı",
-    },
-    {
-      icon: <FaDatabase className="text-4xl" />,
-      title: "Database Management",
-      description: "MongoDB, SQL, Firebase",
-    },
-    {
-      icon: <FaMobile className="text-4xl" />,
-      title: "Mobile Development",
-      description: "React Native, Unity Mobile",
+      title: "Veritabanı Yönetimi",
+      description: "MongoDB ile veritabanı tasarımı ve yönetimi",
+      icon: <FaWeebly className="text-4xl text-blue-600" />,
     },
   ];
 
   return (
-    <section id="skills" className="py-20 bg-primary/95">
+    <section id="skills" className="py-20 bg-gray-900">
       <div className="container mx-auto px-4">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
           animate={hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
+          transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold text-white mb-4">Yeteneklerim</h2>
-          <p className="text-gray-300 max-w-2xl mx-auto">
-            Oyun geliştirme ve web teknolojileri konusunda kapsamlı yeteneklere
-            sahibim. Her projede en iyi kullanıcı deneyimini sunmak için
-            çalışıyorum.
+          <p className="text-gray-400 max-w-2xl mx-auto">
+            Uzmanlık alanlarım ve yapabileceklerim
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {skills.map((skill, index) => (
+        {/* Neler Yapabilirim */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {capabilities.map((capability, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               animate={
                 hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
               }
-              transition={{
-                duration: 0.5,
-                delay: index * 0.1,
-                ease: "easeOut",
-              }}
-              className="bg-primary/50 p-6 rounded-lg border border-secondary/20 hover:border-secondary/40 transition-colors"
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-colors"
             >
-              <div className="text-secondary mb-4">{skill.icon}</div>
-              <h3 className="text-xl font-semibold text-white mb-2">
-                {skill.title}
-              </h3>
-              <p className="text-gray-300">{skill.description}</p>
+              <div className="flex items-center mb-4">
+                <div className="mr-4">{capability.icon}</div>
+                <h4 className="text-white font-semibold text-xl">
+                  {capability.title}
+                </h4>
+              </div>
+              <p className="text-gray-400">{capability.description}</p>
             </motion.div>
           ))}
         </div>
