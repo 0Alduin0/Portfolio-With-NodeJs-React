@@ -16,8 +16,6 @@ import {
   SiCss3,
   SiVsco,
   SiJetbrains,
-  SiPycharm,
-  SiBlender,
   SiBootstrap,
   SiGit,
   SiGithub,
@@ -37,31 +35,31 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "E-Ticaret Platformu",
+      title: "Meyve birleştirme oyunu",
       description:
-        "React ve Node.js kullanarak geliştirdiğim tam kapsamlı e-ticaret platformu",
+        "Unity oyun motoru ve C# diliyle geliştirdiğim, aynı türdeki meyveleri birleştirip puan kazandığımız bir oyun.",
       image: "/images/project1.jpg",
-      github: "https://github.com/yourusername/project1",
+      github: "https://github.com/0Alduin0/FruitMerge-Game",
       live: "https://project1.com",
-      technologies: ["React", "Node.js", "MongoDB", "Express"],
+      technologies: ["Unity", "C#", "Singleplayer"],
     },
     {
-      title: "Sosyal Medya Uygulaması",
+      title: "BlackJack oyunu",
       description:
-        "Gerçek zamanlı mesajlaşma ve paylaşım özellikleri olan sosyal medya uygulaması",
+        "Karşınızdaki kurpiyere karşı oynadığınız, çektiğiniz kartla 21 puana daha çok yaklaşanın kazandığı bir oyun.",
       image: "/images/project2.jpg",
-      github: "https://github.com/yourusername/project2",
+      github: "https://github.com/0Alduin0/BlackJack-Game",
       live: "https://project2.com",
-      technologies: ["React", "Socket.io", "MongoDB", "Express"],
+      technologies: ["Unity", "C#", "Singleplayer"],
     },
     {
-      title: "Task Yönetim Uygulaması",
+      title: "Fps shooter oyunu",
       description:
-        "Takımlar için geliştirdiğim task yönetim ve takip uygulaması",
+        "karşınızdaki herkesi öldürmeye çalıştığınız çok oyunculu bir oyun",
       image: "/images/project3.jpg",
-      github: "https://github.com/yourusername/project3",
+      github: "https://github.com/0Alduin0/Shooter-Game",
       live: "https://project3.com",
-      technologies: ["React", "Node.js", "MongoDB", "Express"],
+      technologies: ["Unity", "C#", "PhotonNetwork", "Multiplayer"],
     },
   ];
 
@@ -136,7 +134,9 @@ const Projects = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-white mb-4">Projelerim</h2>
+          <h2 className="text-4xl font-bold text-white mb-4">
+            Projelerim ve yeteneklerim
+          </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
             Geliştirdiğim projeler ve kullandığım teknolojiler
           </p>
