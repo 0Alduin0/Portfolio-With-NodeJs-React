@@ -2,7 +2,26 @@ import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-import { SiJavascript, SiReact, SiNodedotjs, SiMongodb, SiTailwindcss, SiTypescript } from "react-icons/si";
+import {
+  SiJavascript,
+  SiReact,
+  SiNodedotjs,
+  SiMongodb,
+  SiTailwindcss,
+  SiUnity,
+  SiCsharp,
+  SiExpress,
+  SiPython,
+  SiHtml5,
+  SiCss3,
+  SiVsco,
+  SiJetbrains,
+  SiPycharm,
+  SiBlender,
+  SiBootstrap,
+  SiGit,
+  SiGithub,
+} from "react-icons/si";
 
 const Projects = () => {
   const ref = useRef(null);
@@ -19,7 +38,8 @@ const Projects = () => {
   const projects = [
     {
       title: "E-Ticaret Platformu",
-      description: "React ve Node.js kullanarak geliştirdiğim tam kapsamlı e-ticaret platformu",
+      description:
+        "React ve Node.js kullanarak geliştirdiğim tam kapsamlı e-ticaret platformu",
       image: "/images/project1.jpg",
       github: "https://github.com/yourusername/project1",
       live: "https://project1.com",
@@ -27,7 +47,8 @@ const Projects = () => {
     },
     {
       title: "Sosyal Medya Uygulaması",
-      description: "Gerçek zamanlı mesajlaşma ve paylaşım özellikleri olan sosyal medya uygulaması",
+      description:
+        "Gerçek zamanlı mesajlaşma ve paylaşım özellikleri olan sosyal medya uygulaması",
       image: "/images/project2.jpg",
       github: "https://github.com/yourusername/project2",
       live: "https://project2.com",
@@ -35,7 +56,8 @@ const Projects = () => {
     },
     {
       title: "Task Yönetim Uygulaması",
-      description: "Takımlar için geliştirdiğim task yönetim ve takip uygulaması",
+      description:
+        "Takımlar için geliştirdiğim task yönetim ve takip uygulaması",
       image: "/images/project3.jpg",
       github: "https://github.com/yourusername/project3",
       live: "https://project3.com",
@@ -44,12 +66,64 @@ const Projects = () => {
   ];
 
   const technologies = [
-    { name: "JavaScript", icon: <SiJavascript className="text-4xl text-yellow-500" /> },
+    { name: "Unity", icon: <SiUnity className="text-4xl text-yellow-500" /> },
+    {
+      name: "C#",
+      icon: <SiCsharp className="text-4xl text-yellow-500" />,
+    },
+    {
+      name: "Html",
+      icon: <SiHtml5 className="text-4xl text-yellow-500" />,
+    },
+    {
+      name: "Css",
+      icon: <SiCss3 className="text-4xl text-yellow-500" />,
+    },
+    {
+      name: "JavaScript",
+      icon: <SiJavascript className="text-4xl text-yellow-500" />,
+    },
     { name: "React", icon: <SiReact className="text-4xl text-blue-500" /> },
-    { name: "Node.js", icon: <SiNodedotjs className="text-4xl text-green-500" /> },
-    { name: "MongoDB", icon: <SiMongodb className="text-4xl text-green-600" /> },
-    { name: "Tailwind CSS", icon: <SiTailwindcss className="text-4xl text-cyan-500" /> },
-    { name: "TypeScript", icon: <SiTypescript className="text-4xl text-blue-600" /> },
+    {
+      name: "Node.js",
+      icon: <SiNodedotjs className="text-4xl text-green-500" />,
+    },
+    {
+      name: "ExpressJs",
+      icon: <SiExpress className="text-4xl text-blue-600" />,
+    },
+    {
+      name: "MongoDB",
+      icon: <SiMongodb className="text-4xl text-green-600" />,
+    },
+    {
+      name: "Tailwind CSS",
+      icon: <SiTailwindcss className="text-4xl text-cyan-500" />,
+    },
+    {
+      name: "Python",
+      icon: <SiPython className="text-4xl text-cyan-500" />,
+    },
+    {
+      name: "VsCode",
+      icon: <SiVsco className="text-4xl text-cyan-500" />,
+    },
+    {
+      name: "JetBrains",
+      icon: <SiJetbrains className="text-4xl text-cyan-500" />,
+    },
+    {
+      name: "Bootstrap",
+      icon: <SiBootstrap className="text-4xl text-cyan-500" />,
+    },
+    {
+      name: "Git",
+      icon: <SiGit className="text-4xl text-cyan-500" />,
+    },
+    {
+      name: "Github",
+      icon: <SiGithub className="text-4xl text-cyan-500" />,
+    },
   ];
 
   return (
@@ -99,7 +173,9 @@ const Projects = () => {
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
-                animate={hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                animate={
+                  hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+                }
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-gray-800 rounded-lg overflow-hidden hover:bg-gray-700 transition-colors"
               >
@@ -156,7 +232,9 @@ const Projects = () => {
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
-                animate={hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                animate={
+                  hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+                }
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-gray-800 p-6 rounded-lg text-center hover:bg-gray-700 transition-colors"
               >

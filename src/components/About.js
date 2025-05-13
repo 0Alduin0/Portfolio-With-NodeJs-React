@@ -55,7 +55,7 @@ const About = () => {
             bir oyun geliştiricisi ve yeni teknolojilere açık bir yazılımcıyım.
             Unity oyun motoru ve C# programlama dili ile hem mobil hem masaüstü
             platformlarda 2D ve 3D oyunlar geliştirmekteyim. Ayrıca çeşitli
-            modern teknolojileri kullanarak fullstack yazılımcı olma yolunda
+            modern teknolojileri kullanarak fullstack geliştirici olma yolunda
             yürümekteyim.
           </p>
         </motion.div>

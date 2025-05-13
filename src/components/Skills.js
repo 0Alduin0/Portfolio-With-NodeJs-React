@@ -18,7 +18,7 @@ const Skills = () => {
     {
       title: "Unity Oyun Geliştirme",
       description:
-        "Unity oyun motoru ile hem mobil hem masaüstü platformlarda 2D ve 3D oyun geliştirebilirim. Photon ve netcode yapılarını kullanark çok oyunculu oyunlar yazabilirim",
+        "Unity oyun motoru ile hem mobil hem masaüstü platformlarda 2D ve 3D oyun geliştirebilir, Photon ve netcode yapılarını kullanark çok oyunculu oyunlar yazabilirim",
       icon: <FaUnity className="text-4xl text-blue-500" />,
     },
     {
@@ -28,9 +28,10 @@ const Skills = () => {
       icon: <FaNodeJs className="text-4xl text-green-500" />,
     },
     {
-      title: "Veritabanı Yönetimi",
-      description: "MongoDB ile veritabanı tasarımı ve yönetimi",
-      icon: <FaWeebly className="text-4xl text-blue-600" />,
+      title: "Frontend Geliştirme",
+      description:
+        "React, Vite ve Tailwind CSS ile hızlı, modern ve mobil uyumlu arayüzler geliştiriyorum. UI/UX tasarıma önem veriyor, hızlı, responsive ve performans odaklı frontend projeler geliştirebilirim",
+      icon: <FaReact className="text-4xl text-blue-600" />,
     },
   ];
 
@@ -44,10 +45,9 @@ const Skills = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-white mb-4">Yeteneklerim</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Uzmanlık alanlarım ve yapabileceklerim
-          </p>
+          <h2 className="text-4xl font-bold text-white mb-4">
+            Uzmanlık alanlarım
+          </h2>
         </motion.div>
 
         {/* Neler Yapabilirim */}
