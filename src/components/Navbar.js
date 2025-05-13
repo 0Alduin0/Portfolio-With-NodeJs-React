@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { Link } from "react-scroll";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,11 +24,11 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { title: "Ana Sayfa", href: "#home" },
-    { title: "Hakkımda", href: "#about" },
-    { title: "Yetenekler", href: "#skills" },
-    { title: "Projeler", href: "#projects" },
-    { title: "İletişim", href: "#contact" },
+    { title: "Ana Sayfa", to: "home" },
+    { title: "Hakkımda", to: "about" },
+    { title: "Yetenekler", to: "skills" },
+    { title: "Projeler", to: "projects" },
+    { title: "İletişim", to: "contact" },
   ];
 
   return (
@@ -41,16 +42,23 @@ const Navbar = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
             {navLinks.map((link, index) => (
-              <motion.a
+              <Link
                 key={index}
-                href={link.href}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-white hover:text-secondary transition-colors"
+                to={link.to}
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={800}
+                className="text-white hover:text-secondary transition-colors cursor-pointer"
               >
-                {link.title}
-              </motion.a>
+                <motion.span
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  {link.title}
+                </motion.span>
+              </Link>
             ))}
           </div>
 
@@ -77,14 +85,18 @@ const Navbar = () => {
           >
             <div className="flex flex-col space-y-4 p-4">
               {navLinks.map((link, index) => (
-                <a
+                <Link
                   key={index}
-                  href={link.href}
-                  className="text-white hover:text-secondary transition-colors"
+                  to={link.to}
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={800}
+                  className="text-white hover:text-secondary transition-colors cursor-pointer"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.title}
-                </a>
+                </Link>
               ))}
             </div>
           </motion.div>
