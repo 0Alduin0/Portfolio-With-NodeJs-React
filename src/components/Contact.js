@@ -1,15 +1,25 @@
-import React, { useState, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
-import { FaGamepad, FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
+import {
+  FaEnvelope,
+  FaPhone,
+  FaMapMarkerAlt,
+  FaGithub,
+  FaLinkedin,
+  FaTwitter,
+  FaInstagram,
+} from "react-icons/fa";
 
 const Contact = () => {
   const ref = useRef(null);
+  const isInView = useInView(ref, { threshold: 0.1 });
   const [hasAnimated, setHasAnimated] = useState(false);
-  const isInView = useInView(ref, {
-    threshold: 0.2,
-    triggerOnce: false,
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
 
   useEffect(() => {
@@ -18,11 +28,10 @@ const Contact = () => {
     }
   }, [isInView]);
 
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form data:", formData);
+  };
 
   const handleChange = (e) => {
     setFormData({
@@ -31,80 +40,140 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(formData);
-    // Burada form verilerini işleyebilir veya bir API'ye gönderebilirsiniz
-  };
+  const socialLinks = [
+    {
+      icon: <FaGithub className="text-3xl" />,
+      title: "GitHub",
+      link: "https://github.com/0Alduin0",
+    },
+    {
+      icon: <FaLinkedin className="text-3xl" />,
+      title: "LinkedIn",
+      link: "https://www.linkedin.com/in/enes-yürekli-0b0b0b0b0/",
+    },
+    {
+      icon: <FaTwitter className="text-3xl" />,
+      title: "Twitter",
+      link: "https://twitter.com/yourusername",
+    },
+    {
+      icon: <FaInstagram className="text-3xl" />,
+      title: "Instagram",
+      link: "https://instagram.com/yourusername",
+    },
+  ];
 
   return (
-    <section id="contact" className="py-20 bg-primary/95">
-      <div className="container mx-auto px-4">
+    <section id="contact" className="py-20 bg-dark relative overflow-hidden">
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
           animate={hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
+          transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-white mb-4">İletişim</h2>
-          <p className="text-gray-300 max-w-2xl mx-auto">
-            Benimle iletişime geçmek için aşağıdaki formu kullanabilir veya
-            doğrudan e-posta gönderebilirsiniz.
+          <h2 className="text-4xl font-bold text-light mb-4">İletişim</h2>
+          <p className="text-light/80 max-w-2xl mx-auto">
+            Benimle iletişime geçmek için aşağıdaki kanalları kullanabilirsiniz.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* İletişim Bilgileri ve Sosyal Medya */}
+          <div className="space-y-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={
+                hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+              }
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="bg-primary/30 rounded-lg p-8"
+            >
+              <div className="space-y-6">
+                <div className="flex items-center space-x-4">
+                  <FaEnvelope className="text-3xl text-accent" />
+                  <div>
+                    <h3 className="text-light font-semibold">Email</h3>
+                    <a
+                      href="mailto:enes.yurekli@ogr.balikesir.edu.tr"
+                      className="text-light/80 hover:text-accent transition-colors"
+                    >
+                      enes.yurekli@ogr.balikesir.edu.tr
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <FaPhone className="text-3xl text-accent" />
+                  <div>
+                    <h3 className="text-light font-semibold">Telefon</h3>
+                    <a
+                      href="tel:+905555555555"
+                      className="text-light/80 hover:text-accent transition-colors"
+                    >
+                      +90 555 555 55 55
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <FaMapMarkerAlt className="text-3xl text-accent" />
+                  <div>
+                    <h3 className="text-light font-semibold">Konum</h3>
+                    <a
+                      href="https://maps.google.com/?q=Balıkesir"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-light/80 hover:text-accent transition-colors"
+                    >
+                      Balıkesir, Türkiye
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Sosyal Medya */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={
+                hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+              }
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="bg-primary/30 rounded-lg p-8"
+            >
+              <h3 className="text-light font-semibold text-xl mb-6">
+                Sosyal Medya
+              </h3>
+              <div className="grid grid-cols-2 gap-4">
+                {socialLinks.map((social, index) => (
+                  <a
+                    key={index}
+                    href={social.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-3 text-light/80 hover:text-accent transition-colors"
+                  >
+                    {social.icon}
+                    <span>{social.title}</span>
+                  </a>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+
+          {/* İletişim Formu */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={
-              hasAnimated ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }
-            }
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            className="bg-primary/50 p-8 rounded-lg border border-secondary/20"
+            initial={{ opacity: 0, y: 20 }}
+            animate={hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="bg-primary/30 rounded-lg p-8"
           >
-            <h3 className="text-2xl font-semibold text-white mb-6">
-              İletişim Bilgileri
+            <h3 className="text-light font-semibold text-xl mb-6">
+              Benimle iletişime geçmek için lütfen formu doldurun
             </h3>
-            <div className="space-y-4">
-              <div className="flex items-center gap-4">
-                <FaEnvelope className="text-secondary text-xl" />
-                <span className="text-gray-300">email@example.com</span>
-              </div>
-              <div className="flex items-center gap-4">
-                <FaPhone className="text-secondary text-xl" />
-                <span className="text-gray-300">+90 555 123 4567</span>
-              </div>
-              <div className="flex items-center gap-4">
-                <FaMapMarkerAlt className="text-secondary text-xl" />
-                <span className="text-gray-300">İstanbul, Türkiye</span>
-              </div>
-            </div>
-
-            <div className="mt-8">
-              <h4 className="text-xl font-semibold text-white mb-4">
-                Oyun Geliştirme İşbirliği
-              </h4>
-              <p className="text-gray-300">
-                Unity ile oyun geliştirme projeleriniz için işbirliği
-                yapabiliriz. Aşağıdaki formu doldurarak veya iletişim
-                bilgilerimden bana ulaşabilirsiniz.
-              </p>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={hasAnimated ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            className="bg-primary/50 p-8 rounded-lg border border-secondary/20"
-          >
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label
-                  htmlFor="name"
-                  className="block text-white mb-2 font-medium"
-                >
+                <label htmlFor="name" className="block text-light mb-2">
                   İsim
                 </label>
                 <input
@@ -113,16 +182,14 @@ const Contact = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 bg-primary/30 border border-secondary/20 rounded-lg text-white focus:outline-none focus:border-secondary"
                   required
+                  className="w-full bg-primary/50 border border-accent/20 text-light placeholder-light/50 rounded-lg px-4 py-3 focus:border-accent focus:ring-1 focus:ring-accent outline-none"
+                  placeholder="İsminizi girin"
                 />
               </div>
               <div>
-                <label
-                  htmlFor="email"
-                  className="block text-white mb-2 font-medium"
-                >
-                  E-posta
+                <label htmlFor="email" className="block text-light mb-2">
+                  Email
                 </label>
                 <input
                   type="email"
@@ -130,15 +197,28 @@ const Contact = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 bg-primary/30 border border-secondary/20 rounded-lg text-white focus:outline-none focus:border-secondary"
                   required
+                  className="w-full bg-primary/50 border border-accent/20 text-light placeholder-light/50 rounded-lg px-4 py-3 focus:border-accent focus:ring-1 focus:ring-accent outline-none"
+                  placeholder="Email adresinizi girin"
                 />
               </div>
               <div>
-                <label
-                  htmlFor="message"
-                  className="block text-white mb-2 font-medium"
-                >
+                <label htmlFor="subject" className="block text-light mb-2">
+                  Konu
+                </label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
+                  className="w-full bg-primary/50 border border-accent/20 text-light placeholder-light/50 rounded-lg px-4 py-3 focus:border-accent focus:ring-1 focus:ring-accent outline-none"
+                  placeholder="Konuyu girin"
+                />
+              </div>
+              <div>
+                <label htmlFor="message" className="block text-light mb-2">
                   Mesaj
                 </label>
                 <textarea
@@ -146,20 +226,18 @@ const Contact = () => {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  rows="4"
-                  className="w-full px-4 py-2 bg-primary/30 border border-secondary/20 rounded-lg text-white focus:outline-none focus:border-secondary"
                   required
+                  rows="4"
+                  className="w-full bg-primary/50 border border-accent/20 text-light placeholder-light/50 rounded-lg px-4 py-3 focus:border-accent focus:ring-1 focus:ring-accent outline-none resize-none"
+                  placeholder="Mesajınızı girin"
                 ></textarea>
               </div>
-              <motion.button
+              <button
                 type="submit"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="w-full bg-secondary text-white py-3 rounded-lg font-semibold hover:bg-tertiary transition-colors flex items-center justify-center gap-2"
+                className="w-full bg-accent text-dark hover:bg-accent/90 transition-colors py-3 rounded-lg font-semibold"
               >
-                <FaGamepad className="text-xl" />
                 Gönder
-              </motion.button>
+              </button>
             </form>
           </motion.div>
         </div>

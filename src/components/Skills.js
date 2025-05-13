@@ -2,6 +2,10 @@ import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { FaReact, FaNodeJs, FaDatabase, FaUnity, FaCss3, FaHtml5, FaAdn, FaWeebly } from "react-icons/fa";
+import Lottie from "lottie-react";
+import animation3 from "../assets/animation3.json";
+import animation4 from "../assets/animation4.json";
+import animation5 from "../assets/animation5.json";
 
 const Skills = () => {
   const ref = useRef(null);
@@ -20,23 +24,26 @@ const Skills = () => {
       description:
         "Unity oyun motoru ile hem mobil hem masaüstü platformlarda 2D ve 3D oyun geliştirebilir, Photon ve netcode yapılarını kullanark çok oyunculu oyunlar yazabilirim",
       icon: <FaUnity className="text-4xl text-blue-500" />,
+      animation: animation3,
     },
     {
       title: "Backend Geliştirme",
       description:
         "Node.js ve Express.js ile RESTful API'ler oluşturabilir MongoDb de veri modelleyebilir JWT ile kullanıcı doğrulayabilir ve middleware yapıları kurabilirim.",
       icon: <FaNodeJs className="text-4xl text-green-500" />,
+      animation: animation4,
     },
     {
       title: "Frontend Geliştirme",
       description:
         "React, Vite ve Tailwind CSS ile hızlı, modern ve mobil uyumlu arayüzler geliştiriyorum. UI/UX tasarıma önem veriyor, hızlı, responsive ve performans odaklı frontend projeler geliştirebilirim",
       icon: <FaReact className="text-4xl text-blue-600" />,
+      animation: animation5,
     },
   ];
 
   return (
-    <section id="skills" className="py-20 bg-gray-900">
+    <section id="skills" className="py-20 bg-dark">
       <div className="container mx-auto px-4">
         <motion.div
           ref={ref}
@@ -45,7 +52,7 @@ const Skills = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-white mb-4">
+          <h2 className="text-4xl font-bold text-light mb-4">
             Uzmanlık alanlarım
           </h2>
         </motion.div>
@@ -60,15 +67,22 @@ const Skills = () => {
                 hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
               }
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-colors"
+              className="bg-primary/30 p-6 rounded-lg hover:bg-primary/40 transition-colors"
             >
               <div className="flex items-center mb-4">
                 <div className="mr-4">{capability.icon}</div>
-                <h4 className="text-white font-semibold text-xl">
+                <h4 className="text-light font-semibold text-xl">
                   {capability.title}
                 </h4>
               </div>
-              <p className="text-gray-400">{capability.description}</p>
+              <p className="text-light/80 mb-6">{capability.description}</p>
+              <div className="w-full h-48">
+                <Lottie
+                  animationData={capability.animation}
+                  loop={true}
+                  className="w-full h-full"
+                />
+              </div>
             </motion.div>
           ))}
         </div>

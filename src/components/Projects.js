@@ -64,68 +64,47 @@ const Projects = () => {
   ];
 
   const technologies = [
-    { name: "Unity", icon: <SiUnity className="text-4xl text-yellow-500" /> },
-    {
-      name: "C#",
-      icon: <SiCsharp className="text-4xl text-yellow-500" />,
-    },
-    {
-      name: "Html",
-      icon: <SiHtml5 className="text-4xl text-yellow-500" />,
-    },
-    {
-      name: "Css",
-      icon: <SiCss3 className="text-4xl text-yellow-500" />,
-    },
+    { name: "Unity", icon: <SiUnity className="text-4xl text-[#000000]" /> },
+    { name: "C#", icon: <SiCsharp className="text-4xl text-[#68217A]" /> },
+    { name: "Html", icon: <SiHtml5 className="text-4xl text-[#E34F26]" /> },
+    { name: "Css", icon: <SiCss3 className="text-4xl text-[#1572B6]" /> },
     {
       name: "JavaScript",
-      icon: <SiJavascript className="text-4xl text-yellow-500" />,
+      icon: <SiJavascript className="text-4xl text-[#F7DF1E]" />,
     },
-    { name: "React", icon: <SiReact className="text-4xl text-blue-500" /> },
+    { name: "React", icon: <SiReact className="text-4xl text-[#61DAFB]" /> },
     {
       name: "Node.js",
-      icon: <SiNodedotjs className="text-4xl text-green-500" />,
+      icon: <SiNodedotjs className="text-4xl text-[#339933]" />,
     },
     {
       name: "ExpressJs",
-      icon: <SiExpress className="text-4xl text-blue-600" />,
+      icon: <SiExpress className="text-4xl text-[#000000]" />,
     },
     {
       name: "MongoDB",
-      icon: <SiMongodb className="text-4xl text-green-600" />,
+      icon: <SiMongodb className="text-4xl text-[#47A248]" />,
     },
     {
       name: "Tailwind CSS",
-      icon: <SiTailwindcss className="text-4xl text-cyan-500" />,
+      icon: <SiTailwindcss className="text-4xl text-[#06B6D4]" />,
     },
-    {
-      name: "Python",
-      icon: <SiPython className="text-4xl text-cyan-500" />,
-    },
-    {
-      name: "VsCode",
-      icon: <SiVsco className="text-4xl text-cyan-500" />,
-    },
+    { name: "Python", icon: <SiPython className="text-4xl text-[#3776AB]" /> },
+    { name: "VsCode", icon: <SiVsco className="text-4xl text-[#007ACC]" /> },
     {
       name: "JetBrains",
-      icon: <SiJetbrains className="text-4xl text-cyan-500" />,
+      icon: <SiJetbrains className="text-4xl text-[#000000]" />,
     },
     {
       name: "Bootstrap",
-      icon: <SiBootstrap className="text-4xl text-cyan-500" />,
+      icon: <SiBootstrap className="text-4xl text-[#7952B3]" />,
     },
-    {
-      name: "Git",
-      icon: <SiGit className="text-4xl text-cyan-500" />,
-    },
-    {
-      name: "Github",
-      icon: <SiGithub className="text-4xl text-cyan-500" />,
-    },
+    { name: "Git", icon: <SiGit className="text-4xl text-[#F05032]" /> },
+    { name: "Github", icon: <SiGithub className="text-4xl text-[#181717]" /> },
   ];
 
   return (
-    <section id="projects" className="py-20 bg-gray-900">
+    <section id="projects" className="py-20 bg-dark">
       <div className="container mx-auto px-4">
         <motion.div
           ref={ref}
@@ -134,10 +113,10 @@ const Projects = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-white mb-4">
+          <h2 className="text-4xl font-bold text-light mb-4">
             Projelerim ve yeteneklerim
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <p className="text-light/80 max-w-2xl mx-auto">
             Geliştirdiğim projeler ve kullandığım teknolojiler
           </p>
         </motion.div>
@@ -177,7 +156,7 @@ const Projects = () => {
                   hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
                 }
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-gray-800 rounded-lg overflow-hidden hover:bg-gray-700 transition-colors"
+                className="bg-primary/30 rounded-lg overflow-hidden hover:bg-primary/40 transition-colors"
               >
                 <div className="relative h-48">
                   <img
@@ -187,15 +166,15 @@ const Projects = () => {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold text-white mb-2">
+                  <h3 className="text-light font-semibold text-xl mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-gray-400 mb-4">{project.description}</p>
+                  <p className="text-light/80 mb-4">{project.description}</p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.technologies.map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm"
+                        className="px-3 py-1 bg-accent/20 text-accent rounded-full text-sm"
                       >
                         {tech}
                       </span>
@@ -206,7 +185,7 @@ const Projects = () => {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-white transition-colors"
+                      className="text-light/80 hover:text-light transition-colors"
                     >
                       <FaGithub className="text-2xl" />
                     </a>
@@ -214,7 +193,7 @@ const Projects = () => {
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-white transition-colors"
+                      className="text-light/80 hover:text-light transition-colors"
                     >
                       <FaExternalLinkAlt className="text-2xl" />
                     </a>
@@ -236,10 +215,10 @@ const Projects = () => {
                   hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
                 }
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-gray-800 p-6 rounded-lg text-center hover:bg-gray-700 transition-colors"
+                className="bg-primary/30 p-6 rounded-lg text-center hover:bg-primary/40 transition-colors"
               >
                 <div className="flex justify-center mb-4">{tech.icon}</div>
-                <h4 className="text-white font-semibold">{tech.name}</h4>
+                <h4 className="text-light font-semibold">{tech.name}</h4>
               </motion.div>
             ))}
           </div>
