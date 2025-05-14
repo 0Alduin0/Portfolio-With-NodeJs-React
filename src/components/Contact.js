@@ -64,10 +64,7 @@ const Contact = () => {
   ];
 
   return (
-    <section
-      id="contact"
-      className="py-20 relative overflow-hidden"
-    >
+    <section id="contact" className="py-20 relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
           ref={ref}
@@ -91,7 +88,7 @@ const Contact = () => {
                 hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
               }
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="bg-darkBlue/30 rounded-lg p-8"
+              className="bg-cardBg p-6 rounded-lg border border-cardBorder hover:border-borderAccent transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up"
             >
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">
@@ -142,7 +139,7 @@ const Contact = () => {
                 hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
               }
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="bg-darkBlue/30 rounded-lg p-8"
+              className="bg-cardBg p-6 rounded-lg border border-cardBorder hover:border-borderAccent transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up"
             >
               <h3 className="text-lightGray font-semibold text-xl mb-6">
                 Sosyal Medya
@@ -169,7 +166,7 @@ const Contact = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="bg-darkBlue/30 rounded-lg p-8"
+            className="bg-cardBg p-6 rounded-lg border border-cardBorder hover:border-borderAccent transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up"
           >
             <h3 className="text-lightGray font-semibold text-xl mb-6">
               Benimle iletişime geçmek için lütfen formu doldurun
@@ -186,7 +183,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full bg-darkBlue/50 border border-accentBlue/20 text-lightGray placeholder-lightGray/50 rounded-lg px-4 py-3 focus:border-accentBlue focus:ring-1 focus:ring-accentBlue outline-none"
+                  className="w-full bg-cardBg/50 border border-cardBorder/50 hover:border-borderAccent/70 transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up text-lightGray placeholder-lightGray/50 rounded-lg px-4 py-3 focus:border-accentBlue focus:ring-1 focus:ring-accentBlue outline-none"
                   placeholder="İsminizi girin"
                 />
               </div>
@@ -201,7 +198,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full bg-darkBlue/50 border border-accentBlue/20 text-lightGray placeholder-lightGray/50 rounded-lg px-4 py-3 focus:border-accentBlue focus:ring-1 focus:ring-accentBlue outline-none"
+                  className="w-full bg-cardBg/50 border border-cardBorder/50 hover:border-borderAccent/70 transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up text-lightGray placeholder-lightGray/50 rounded-lg px-4 py-3 focus:border-accentBlue focus:ring-1 focus:ring-accentBlue outline-none"
                   placeholder="Email adresinizi girin"
                 />
               </div>
@@ -216,7 +213,7 @@ const Contact = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full bg-darkBlue/50 border border-accentBlue/20 text-lightGray placeholder-lightGray/50 rounded-lg px-4 py-3 focus:border-accentBlue focus:ring-1 focus:ring-accentBlue outline-none"
+                  className="w-full bg-cardBg/50 border border-cardBorder/50 hover:border-borderAccent/70 transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up text-lightGray placeholder-lightGray/50 rounded-lg px-4 py-3 focus:border-accentBlue focus:ring-1 focus:ring-accentBlue outline-none"
                   placeholder="Konuyu girin"
                 />
               </div>
@@ -231,7 +228,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows="4"
-                  className="w-full bg-darkBlue/50 border border-accentBlue/20 text-lightGray placeholder-lightGray/50 rounded-lg px-4 py-3 focus:border-accentBlue focus:ring-1 focus:ring-accentBlue outline-none resize-none"
+                  className="w-full bg-cardBg/50 border border-cardBorder/50 hover:border-borderAccent/70 transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up text-lightGray placeholder-lightGray/50 rounded-lg px-4 py-3 focus:border-accentBlue focus:ring-1 focus:ring-accentBlue outline-none resize-none"
                   placeholder="Mesajınızı girin"
                 ></textarea>
               </div>

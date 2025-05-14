@@ -80,7 +80,7 @@ const About = () => {
                     delay: index * 0.1,
                     ease: "easeOut",
                   }}
-                  className="bg-darkBlue/30 p-6 rounded-lg border border-accentBlue/20 hover:border-accentBlue/40 transition-all duration-300 animate-float-3d hover:animate-glow hover:animate-scale-up"
+                  className="bg-cardBg/50 p-6 rounded-lg border border-cardBorder/50 hover:border-borderAccent/70 transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up"
                 >
                   <div className="text-accentBlue mb-4">{skill.icon}</div>
                   <h3 className="text-lightGray font-semibold text-xl mb-2">
