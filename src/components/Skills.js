@@ -43,7 +43,7 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 bg-dark">
+    <section id="skills" className="py-20 bg-darkPurple">
       <div className="container mx-auto px-4">
         <motion.div
           ref={ref}
@@ -52,7 +52,7 @@ const Skills = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-light mb-4">
+          <h2 className="text-4xl font-bold text-lightGray mb-4">
             Uzmanlık alanlarım
           </h2>
         </motion.div>
@@ -67,15 +67,15 @@ const Skills = () => {
                 hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
               }
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-primary/30 p-6 rounded-lg hover:bg-primary/40 transition-colors"
+              className="bg-darkBlue/30 p-6 rounded-lg hover:bg-darkBlue/40 transition-colors"
             >
               <div className="flex items-center mb-4">
                 <div className="mr-4">{capability.icon}</div>
-                <h4 className="text-light font-semibold text-xl">
+                <h4 className="text-lightGray font-semibold text-xl">
                   {capability.title}
                 </h4>
               </div>
-              <p className="text-light/80 mb-6">{capability.description}</p>
+              <p className="text-lightGray/80 mb-6">{capability.description}</p>
               <div className="w-full h-48">
                 <Lottie
                   animationData={capability.animation}

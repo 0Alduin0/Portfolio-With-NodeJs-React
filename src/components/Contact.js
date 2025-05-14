@@ -64,7 +64,10 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-dark relative overflow-hidden">
+    <section
+      id="contact"
+      className="py-20 bg-darkPurple relative overflow-hidden"
+    >
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
           ref={ref}
@@ -73,8 +76,8 @@ const Contact = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-light mb-4">İletişim</h2>
-          <p className="text-light/80 max-w-2xl mx-auto">
+          <h2 className="text-4xl font-bold text-lightGray mb-4">İletişim</h2>
+          <p className="text-lightGray/80 max-w-2xl mx-auto">
             Benimle iletişime geçmek için aşağıdaki kanalları kullanabilirsiniz.
           </p>
         </motion.div>
@@ -88,42 +91,42 @@ const Contact = () => {
                 hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
               }
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="bg-primary/30 rounded-lg p-8"
+              className="bg-darkBlue/30 rounded-lg p-8"
             >
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">
-                  <FaEnvelope className="text-3xl text-accent" />
+                  <FaEnvelope className="text-3xl text-accentBlue" />
                   <div>
-                    <h3 className="text-light font-semibold">Email</h3>
+                    <h3 className="text-lightGray font-semibold">Email</h3>
                     <a
                       href="mailto:enes.yurekli@ogr.balikesir.edu.tr"
-                      className="text-light/80 hover:text-accent transition-colors"
+                      className="text-lightGray/80 hover:text-accentBlue transition-colors"
                     >
                       enes.yurekli@ogr.balikesir.edu.tr
                     </a>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
-                  <FaPhone className="text-3xl text-accent" />
+                  <FaPhone className="text-3xl text-accentBlue" />
                   <div>
-                    <h3 className="text-light font-semibold">Telefon</h3>
+                    <h3 className="text-lightGray font-semibold">Telefon</h3>
                     <a
                       href="tel:+905555555555"
-                      className="text-light/80 hover:text-accent transition-colors"
+                      className="text-lightGray/80 hover:text-accentBlue transition-colors"
                     >
                       +90 555 555 55 55
                     </a>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
-                  <FaMapMarkerAlt className="text-3xl text-accent" />
+                  <FaMapMarkerAlt className="text-3xl text-accentBlue" />
                   <div>
-                    <h3 className="text-light font-semibold">Konum</h3>
+                    <h3 className="text-lightGray font-semibold">Konum</h3>
                     <a
                       href="https://maps.google.com/?q=Balıkesir"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-light/80 hover:text-accent transition-colors"
+                      className="text-lightGray/80 hover:text-accentBlue transition-colors"
                     >
                       Balıkesir, Türkiye
                     </a>
@@ -139,9 +142,9 @@ const Contact = () => {
                 hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
               }
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="bg-primary/30 rounded-lg p-8"
+              className="bg-darkBlue/30 rounded-lg p-8"
             >
-              <h3 className="text-light font-semibold text-xl mb-6">
+              <h3 className="text-lightGray font-semibold text-xl mb-6">
                 Sosyal Medya
               </h3>
               <div className="grid grid-cols-2 gap-4">
@@ -151,7 +154,7 @@ const Contact = () => {
                     href={social.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center space-x-3 text-light/80 hover:text-accent transition-colors"
+                    className="flex items-center space-x-3 text-lightGray/80 hover:text-accentBlue transition-colors"
                   >
                     {social.icon}
                     <span>{social.title}</span>
@@ -166,14 +169,14 @@ const Contact = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="bg-primary/30 rounded-lg p-8"
+            className="bg-darkBlue/30 rounded-lg p-8"
           >
-            <h3 className="text-light font-semibold text-xl mb-6">
+            <h3 className="text-lightGray font-semibold text-xl mb-6">
               Benimle iletişime geçmek için lütfen formu doldurun
             </h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-light mb-2">
+                <label htmlFor="name" className="block text-lightGray mb-2">
                   İsim
                 </label>
                 <input
@@ -183,12 +186,12 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full bg-primary/50 border border-accent/20 text-light placeholder-light/50 rounded-lg px-4 py-3 focus:border-accent focus:ring-1 focus:ring-accent outline-none"
+                  className="w-full bg-darkBlue/50 border border-accentBlue/20 text-lightGray placeholder-lightGray/50 rounded-lg px-4 py-3 focus:border-accentBlue focus:ring-1 focus:ring-accentBlue outline-none"
                   placeholder="İsminizi girin"
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-light mb-2">
+                <label htmlFor="email" className="block text-lightGray mb-2">
                   Email
                 </label>
                 <input
@@ -198,12 +201,12 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full bg-primary/50 border border-accent/20 text-light placeholder-light/50 rounded-lg px-4 py-3 focus:border-accent focus:ring-1 focus:ring-accent outline-none"
+                  className="w-full bg-darkBlue/50 border border-accentBlue/20 text-lightGray placeholder-lightGray/50 rounded-lg px-4 py-3 focus:border-accentBlue focus:ring-1 focus:ring-accentBlue outline-none"
                   placeholder="Email adresinizi girin"
                 />
               </div>
               <div>
-                <label htmlFor="subject" className="block text-light mb-2">
+                <label htmlFor="subject" className="block text-lightGray mb-2">
                   Konu
                 </label>
                 <input
@@ -213,12 +216,12 @@ const Contact = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full bg-primary/50 border border-accent/20 text-light placeholder-light/50 rounded-lg px-4 py-3 focus:border-accent focus:ring-1 focus:ring-accent outline-none"
+                  className="w-full bg-darkBlue/50 border border-accentBlue/20 text-lightGray placeholder-lightGray/50 rounded-lg px-4 py-3 focus:border-accentBlue focus:ring-1 focus:ring-accentBlue outline-none"
                   placeholder="Konuyu girin"
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-light mb-2">
+                <label htmlFor="message" className="block text-lightGray mb-2">
                   Mesaj
                 </label>
                 <textarea
@@ -228,13 +231,13 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows="4"
-                  className="w-full bg-primary/50 border border-accent/20 text-light placeholder-light/50 rounded-lg px-4 py-3 focus:border-accent focus:ring-1 focus:ring-accent outline-none resize-none"
+                  className="w-full bg-darkBlue/50 border border-accentBlue/20 text-lightGray placeholder-lightGray/50 rounded-lg px-4 py-3 focus:border-accentBlue focus:ring-1 focus:ring-accentBlue outline-none resize-none"
                   placeholder="Mesajınızı girin"
                 ></textarea>
               </div>
               <button
                 type="submit"
-                className="w-full bg-accent text-dark hover:bg-accent/90 transition-colors py-3 rounded-lg font-semibold"
+                className="w-full bg-accentBlue text-darkPurple hover:bg-accentBlue/90 transition-colors py-3 rounded-lg font-semibold"
               >
                 Gönder
               </button>

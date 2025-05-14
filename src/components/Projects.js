@@ -104,7 +104,7 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-dark">
+    <section id="projects" className="py-20 bg-darkPurple">
       <div className="container mx-auto px-4">
         <motion.div
           ref={ref}
@@ -113,10 +113,10 @@ const Projects = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-light mb-4">
+          <h2 className="text-4xl font-bold text-lightGray mb-4">
             Projelerim ve yeteneklerim
           </h2>
-          <p className="text-light/80 max-w-2xl mx-auto">
+          <p className="text-lightGray/80 max-w-2xl mx-auto">
             Geliştirdiğim projeler ve kullandığım teknolojiler
           </p>
         </motion.div>
@@ -156,7 +156,7 @@ const Projects = () => {
                   hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
                 }
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-primary/30 rounded-lg overflow-hidden hover:bg-primary/40 transition-colors"
+                className="bg-darkBlue/30 rounded-lg overflow-hidden hover:bg-darkBlue/40 transition-colors"
               >
                 <div className="relative h-48">
                   <img
@@ -166,15 +166,17 @@ const Projects = () => {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-light font-semibold text-xl mb-2">
+                  <h3 className="text-lightGray font-semibold text-xl mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-light/80 mb-4">{project.description}</p>
+                  <p className="text-lightGray/80 mb-4">
+                    {project.description}
+                  </p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.technologies.map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="px-3 py-1 bg-accent/20 text-accent rounded-full text-sm"
+                        className="px-3 py-1 bg-accentBlue/20 text-accentBlue rounded-full text-sm"
                       >
                         {tech}
                       </span>
@@ -185,7 +187,7 @@ const Projects = () => {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-light/80 hover:text-light transition-colors"
+                      className="text-lightGray/80 hover:text-lightGray transition-colors"
                     >
                       <FaGithub className="text-2xl" />
                     </a>
@@ -193,7 +195,7 @@ const Projects = () => {
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-light/80 hover:text-light transition-colors"
+                      className="text-lightGray/80 hover:text-lightGray transition-colors"
                     >
                       <FaExternalLinkAlt className="text-2xl" />
                     </a>
@@ -215,10 +217,10 @@ const Projects = () => {
                   hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
                 }
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-primary/30 p-6 rounded-lg text-center hover:bg-primary/40 transition-colors"
+                className="bg-darkBlue/30 p-6 rounded-lg text-center hover:bg-darkBlue/40 transition-colors"
               >
                 <div className="flex justify-center mb-4">{tech.icon}</div>
-                <h4 className="text-light font-semibold">{tech.name}</h4>
+                <h4 className="text-lightGray font-semibold">{tech.name}</h4>
               </motion.div>
             ))}
           </div>

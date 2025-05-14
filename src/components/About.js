@@ -42,7 +42,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-dark">
+    <section id="about" className="py-20 bg-darkPurple">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           {/* Sol taraf - Metin içeriği */}
@@ -54,8 +54,10 @@ const About = () => {
             className="flex-1"
           >
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-light mb-4">Hakkımda</h2>
-              <p className="text-light/80 max-w-2xl mx-auto">
+              <h2 className="text-4xl font-bold text-lightGray mb-4">
+                Hakkımda
+              </h2>
+              <p className="text-lightGray/80 max-w-2xl mx-auto">
                 Balıkesir üniversitesi bilgisayar mühendisliği öğrencisiyim.
                 Tutkulu bir oyun geliştiricisi ve yeni teknolojilere açık bir
                 yazılımcıyım. Unity oyun motoru ve C# programlama dili ile hem
@@ -78,13 +80,13 @@ const About = () => {
                     delay: index * 0.1,
                     ease: "easeOut",
                   }}
-                  className="bg-primary/30 p-6 rounded-lg border border-accent/20 hover:border-accent/40 transition-colors"
+                  className="bg-darkBlue/30 p-6 rounded-lg border border-accentBlue/20 hover:border-accentBlue/40 transition-colors"
                 >
-                  <div className="text-accent mb-4">{skill.icon}</div>
-                  <h3 className="text-light font-semibold text-xl mb-2">
+                  <div className="text-accentBlue mb-4">{skill.icon}</div>
+                  <h3 className="text-lightGray font-semibold text-xl mb-2">
                     {skill.title}
                   </h3>
-                  <p className="text-light/80">{skill.description}</p>
+                  <p className="text-lightGray/80">{skill.description}</p>
                 </motion.div>
               ))}
             </div>

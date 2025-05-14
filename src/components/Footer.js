@@ -3,10 +3,10 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-primary/30 py-8">
+    <footer className="bg-darkBlue/30 py-8">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="text-light mb-4 md:mb-0">
+          <div className="text-lightGray mb-4 md:mb-0">
             <p>&copy; 2024 Enes Yürekli. Tüm hakları saklıdır.</p>
           </div>
           <div className="flex space-x-6">
@@ -14,7 +14,7 @@ const Footer = () => {
               href="https://github.com/0Alduin0"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-light hover:text-accent transition-colors"
+              className="text-lightGray hover:text-accentBlue transition-colors"
             >
               <FaGithub className="text-2xl" />
             </a>
@@ -22,7 +22,7 @@ const Footer = () => {
               href="https://www.linkedin.com/in/enes-yürekli-0b0b0b0b0/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-light hover:text-accent transition-colors"
+              className="text-lightGray hover:text-accentBlue transition-colors"
             >
               <FaLinkedin className="text-2xl" />
             </a>

@@ -4,30 +4,23 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#0f172a",
-        secondary: "#3b82f6",
-        tertiary: "#60a5fa",
-        dark: "#291740",
-        light: "#f8fafc",
-        accent: "#3b82f6",
+        // Ana arka plan rengi (App.js, tüm section'lar)
+        darkPurple: "#291740",
+
+        // Kartlar ve form alanları arka planı (About.js, Projects.js, Contact.js, Footer.js)
+        darkBlue: "#0f172a",
+
+        // Buton hover efekti (Hero.js)
+        lightBlue: "#60a5fa",
+
+        // Metin rengi (tüm componentler)
+        lightGray: "#f8fafc",
+
+        // Vurgu rengi - butonlar, ikonlar, hover efektleri (tüm componentler)
+        accentBlue: "#3b82f6",
       },
       backdropBlur: {
         xs: "2px",
-      },
-      animation: {
-        gradient: "gradient 8s linear infinite",
-      },
-      keyframes: {
-        gradient: {
-          "0%, 100%": {
-            "background-size": "200% 200%",
-            "background-position": "left center",
-          },
-          "50%": {
-            "background-size": "200% 200%",
-            "background-position": "right center",
-          },
-        },
       },
     },
   },

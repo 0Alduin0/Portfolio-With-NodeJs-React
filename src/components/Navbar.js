@@ -33,8 +33,8 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-dark/95 py-2" : "bg-transparent py-4"
+      className={`sticky top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${
+        scrolled ? "bg-darkPurple/20 py-2" : "bg-transparent py-4"
       }`}
     >
       <div className="container mx-auto px-4">
@@ -49,7 +49,7 @@ const Navbar = () => {
                 smooth={true}
                 offset={-70}
                 duration={800}
-                className="text-light hover:text-accent transition-colors cursor-pointer"
+                className="text-lightGray hover:text-accentBlue transition-colors cursor-pointer"
               >
                 <motion.span
                   initial={{ opacity: 0, y: -20 }}
@@ -64,7 +64,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-light focus:outline-none"
+            className="md:hidden text-lightGray focus:outline-none"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? (
@@ -81,7 +81,7 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="md:hidden bg-dark/95 mt-4 rounded-lg"
+            className="md:hidden bg-darkPurple/95 mt-4 rounded-lg"
           >
             <div className="flex flex-col space-y-4 p-4">
               {navLinks.map((link, index) => (
@@ -92,7 +92,7 @@ const Navbar = () => {
                   smooth={true}
                   offset={-70}
                   duration={800}
-                  className="text-light hover:text-accent transition-colors cursor-pointer"
+                  className="text-lightGray hover:text-accentBlue transition-colors cursor-pointer"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.title}

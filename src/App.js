@@ -9,8 +9,8 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="relative min-h-screen bg-dark">
-      <div className="relative backdrop-blur-md bg-dark/30">
+    <div className="relative min-h-screen bg-darkPurple">
+      <div className="relative backdrop-blur-md bg-darkPurple/30">
         <div className="relative">
           <Navbar />
           <Hero />
