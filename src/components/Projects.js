@@ -1,7 +1,12 @@
 import React, { useRef, useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "framer-motion";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import {
+  FaGithub,
+  FaExternalLinkAlt,
+  FaChevronLeft,
+  FaChevronRight,
+} from "react-icons/fa";
 import {
   SiJavascript,
   SiReact,
@@ -26,6 +31,26 @@ const Projects = () => {
   const isInView = useInView(ref, { threshold: 0.1 });
   const [hasAnimated, setHasAnimated] = useState(false);
   const [activeTab, setActiveTab] = useState("projects");
+  const [currentImageIndex, setCurrentImageIndex] = useState({});
+
+  const slideVariants = {
+    enter: (direction) => ({
+      x: direction > 0 ? 1000 : -1000,
+      opacity: 0,
+    }),
+    center: {
+      zIndex: 1,
+      x: 0,
+      opacity: 1,
+    },
+    exit: (direction) => ({
+      zIndex: 0,
+      x: direction < 0 ? 1000 : -1000,
+      opacity: 0,
+    }),
+  };
+
+  const [[page, direction], setPage] = useState([0, 0]);
 
   useEffect(() => {
     if (isInView && !hasAnimated) {
@@ -38,7 +63,11 @@ const Projects = () => {
       title: "Meyve birleştirme oyunu",
       description:
         "Unity oyun motoru ve C# diliyle geliştirdiğim, aynı türdeki meyveleri birleştirip puan kazandığımız bir oyun.",
-      image: "/images/project1.jpg",
+      images: [
+        require("../assets/images/screenshots1.jpg"),
+        require("../assets/images/screenshots2.jpg"),
+        require("../assets/images/screenshots3.jpg"),
+      ],
       github: "https://github.com/0Alduin0/FruitMerge-Game",
       live: "https://project1.com",
       technologies: ["Unity", "C#", "Singleplayer"],
@@ -47,7 +76,11 @@ const Projects = () => {
       title: "BlackJack oyunu",
       description:
         "Karşınızdaki kurpiyere karşı oynadığınız, çektiğiniz kartla 21 puana daha çok yaklaşanın kazandığı bir oyun.",
-      image: "/images/project2.jpg",
+      images: [
+        require("../assets/images/screenshots1.jpg"),
+        require("../assets/images/screenshots2.jpg"),
+        require("../assets/images/screenshots3.jpg"),
+      ],
       github: "https://github.com/0Alduin0/BlackJack-Game",
       live: "https://project2.com",
       technologies: ["Unity", "C#", "Singleplayer"],
@@ -56,7 +89,11 @@ const Projects = () => {
       title: "Fps shooter oyunu",
       description:
         "karşınızdaki herkesi öldürmeye çalıştığınız çok oyunculu bir oyun",
-      image: "/images/project3.jpg",
+      images: [
+        require("../assets/images/screenshots1.jpg"),
+        require("../assets/images/screenshots2.jpg"),
+        require("../assets/images/screenshots3.jpg"),
+      ],
       github: "https://github.com/0Alduin0/Shooter-Game",
       live: "https://project3.com",
       technologies: ["Unity", "C#", "PhotonNetwork", "Multiplayer"],
@@ -102,6 +139,28 @@ const Projects = () => {
     { name: "Git", icon: <SiGit className="text-4xl text-[#F05032]" /> },
     { name: "Github", icon: <SiGithub className="text-4xl text-[#181717]" /> },
   ];
+
+  const handlePrevImage = (projectIndex) => {
+    setCurrentImageIndex((prev) => ({
+      ...prev,
+      [projectIndex]:
+        prev[projectIndex] > 0
+          ? prev[projectIndex] - 1
+          : projects[projectIndex].images.length - 1,
+    }));
+    setPage([page - 1, -1]);
+  };
+
+  const handleNextImage = (projectIndex) => {
+    setCurrentImageIndex((prev) => ({
+      ...prev,
+      [projectIndex]:
+        prev[projectIndex] < projects[projectIndex].images.length - 1
+          ? prev[projectIndex] + 1
+          : 0,
+    }));
+    setPage([page + 1, 1]);
+  };
 
   return (
     <section id="projects" className="py-20">
@@ -158,12 +217,50 @@ const Projects = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-cardBg/50 p-6 rounded-lg text-center border border-cardBorder/50 hover:border-borderAccent/70 transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up"
               >
-                <div className="relative h-48">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover"
-                  />
+                <div className="relative h-48 group overflow-hidden">
+                  <AnimatePresence initial={false} custom={direction}>
+                    <motion.img
+                      key={currentImageIndex[index] || 0}
+                      src={project.images[currentImageIndex[index] || 0]}
+                      alt={project.title}
+                      custom={direction}
+                      variants={slideVariants}
+                      initial="enter"
+                      animate="center"
+                      exit="exit"
+                      transition={{
+                        x: { type: "spring", stiffness: 300, damping: 30 },
+                        opacity: { duration: 0.2 },
+                      }}
+                      className="w-full h-full object-cover rounded-lg absolute inset-0"
+                    />
+                  </AnimatePresence>
+                  <div className="absolute inset-0 flex items-center justify-between opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <button
+                      onClick={() => handlePrevImage(index)}
+                      className="bg-darkBlue/80 p-2 rounded-full text-lightGray hover:bg-accentBlue/80 transition-colors z-10"
+                    >
+                      <FaChevronLeft />
+                    </button>
+                    <button
+                      onClick={() => handleNextImage(index)}
+                      className="bg-darkBlue/80 p-2 rounded-full text-lightGray hover:bg-accentBlue/80 transition-colors z-10"
+                    >
+                      <FaChevronRight />
+                    </button>
+                  </div>
+                  <div className="absolute bottom-2 left-0 right-0 flex justify-center space-x-1 z-10">
+                    {project.images.map((_, imgIndex) => (
+                      <div
+                        key={imgIndex}
+                        className={`w-2 h-2 rounded-full ${
+                          (currentImageIndex[index] || 0) === imgIndex
+                            ? "bg-accentBlue"
+                            : "bg-lightGray/50"
+                        }`}
+                      />
+                    ))}
+                  </div>
                 </div>
                 <div className="p-6">
                   <h3 className="text-lightGray font-semibold text-xl mb-2">
