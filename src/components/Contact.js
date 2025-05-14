@@ -66,7 +66,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="py-20 bg-darkPurple relative overflow-hidden"
+      className="py-20 relative overflow-hidden"
     >
       <div className="container mx-auto px-4 relative z-10">
         <motion.div

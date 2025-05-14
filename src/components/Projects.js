@@ -104,7 +104,7 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-darkPurple">
+    <section id="projects" className="py-20">
       <div className="container mx-auto px-4">
         <motion.div
           ref={ref}
@@ -156,7 +156,7 @@ const Projects = () => {
                   hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
                 }
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-darkBlue/30 rounded-lg overflow-hidden hover:bg-darkBlue/40 transition-colors"
+                className="bg-darkBlue/30 rounded-lg overflow-hidden hover:bg-darkBlue/40 transition-all duration-300 animate-float-3d hover:animate-glow hover:animate-scale-up"
               >
                 <div className="relative h-48">
                   <img

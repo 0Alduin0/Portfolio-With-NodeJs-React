@@ -42,7 +42,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-darkPurple">
+    <section id="about" className="py-20">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           {/* Sol taraf - Metin içeriği */}
@@ -80,7 +80,7 @@ const About = () => {
                     delay: index * 0.1,
                     ease: "easeOut",
                   }}
-                  className="bg-darkBlue/30 p-6 rounded-lg border border-accentBlue/20 hover:border-accentBlue/40 transition-colors"
+                  className="bg-darkBlue/30 p-6 rounded-lg border border-accentBlue/20 hover:border-accentBlue/40 transition-all duration-300 animate-float-3d hover:animate-glow hover:animate-scale-up"
                 >
                   <div className="text-accentBlue mb-4">{skill.icon}</div>
                   <h3 className="text-lightGray font-semibold text-xl mb-2">

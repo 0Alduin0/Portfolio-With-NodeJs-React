@@ -43,7 +43,7 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 bg-darkPurple">
+    <section id="skills" className="py-20">
       <div className="container mx-auto px-4">
         <motion.div
           ref={ref}
@@ -67,7 +67,7 @@ const Skills = () => {
                 hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
               }
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-darkBlue/30 p-6 rounded-lg hover:bg-darkBlue/40 transition-colors"
+              className="bg-darkBlue/30 p-6 rounded-lg hover:bg-darkBlue/40 transition-all duration-300 animate-float-3d hover:animate-glow hover:animate-scale-up"
             >
               <div className="flex items-center mb-4">
                 <div className="mr-4">{capability.icon}</div>
