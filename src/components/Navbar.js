@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-scroll";
 
@@ -30,6 +30,13 @@ const Navbar = () => {
     { title: "Projeler", to: "projects" },
     { title: "İletişim", to: "contact" },
   ];
+
+  const handleMenuClick = (to) => {
+    setIsOpen(false);
+    if (to === "home") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
 
   return (
     <nav
@@ -63,42 +70,45 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button
+          <motion.button
             className="md:hidden text-lightGray focus:outline-none"
             onClick={() => setIsOpen(!isOpen)}
+            whileTap={{ scale: 0.95 }}
           >
             {isOpen ? (
               <FaTimes className="text-2xl" />
             ) : (
               <FaBars className="text-2xl" />
             )}
-          </button>
+          </motion.button>
         </div>
 
         {/* Mobile Menu */}
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className={`${
-              isOpen ? "translate-x-0" : "translate-x-full"
-            } fixed top-0 right-0 h-screen w-64 bg-cardBg/50 backdrop-blur-lg border-l border-cardBorder/50 transition-transform duration-300 ease-in-out z-50`}
-          >
-            <div className="flex flex-col space-y-4 p-4">
-              {navLinks.map((link, index) => (
-                <a
-                  key={index}
-                  href={`#${link.to}`}
-                  className="text-lightGray hover:text-accentBlue transition-colors px-4 py-2 rounded-lg hover:bg-cardHover/30"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.title}
-                </a>
-              ))}
-            </div>
-          </motion.div>
-        )}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, x: "100%" }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: "100%" }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="fixed top-0 right-0 h-screen w-64 bg-cardBg/50 backdrop-blur-lg border-l border-cardBorder/50 z-50"
+            >
+              <div className="flex flex-col space-y-4 p-4">
+                {navLinks.map((link, index) => (
+                  <motion.a
+                    key={index}
+                    href={`#${link.to}`}
+                    className="text-lightGray hover:text-accentBlue transition-colors px-4 py-2 rounded-lg hover:bg-cardHover/30"
+                    onClick={() => handleMenuClick(link.to)}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    {link.title}
+                  </motion.a>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </nav>
   );
