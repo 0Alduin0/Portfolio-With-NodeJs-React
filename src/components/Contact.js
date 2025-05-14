@@ -10,17 +10,20 @@ import {
   FaTwitter,
   FaInstagram,
 } from "react-icons/fa";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { threshold: 0.1 });
   const [hasAnimated, setHasAnimated] = useState(false);
-  const [formData, setFormData] = useState({
+  const [form, setForm] = useState({
     name: "",
     email: "",
-    subject: "",
     message: "",
   });
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     if (isInView && !hasAnimated) {
@@ -28,16 +31,36 @@ const Contact = () => {
     }
   }, [isInView]);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form data:", formData);
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(false);
+    setSuccess(false);
+
+    try {
+      await emailjs.sendForm(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        ref.current,
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+      );
+
+      setSuccess(true);
+      setForm({
+        name: "",
+        email: "",
+        message: "",
+      });
+    } catch (error) {
+      setError(true);
+      console.error("Error sending email:", error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const socialLinks = [
@@ -75,7 +98,8 @@ const Contact = () => {
         >
           <h2 className="text-4xl font-bold text-lightGray mb-4">İletişim</h2>
           <p className="text-lightGray/80 max-w-2xl mx-auto">
-            Benimle iletişime geçmek için aşağıdaki kanalları kullanabilirsiniz.
+            Benimle iletişime geçmek için aşağıdaki formu kullanabilir veya
+            iletişim bilgilerimden bana ulaşabilirsiniz.
           </p>
         </motion.div>
 
@@ -171,7 +195,7 @@ const Contact = () => {
             <h3 className="text-lightGray font-semibold text-xl mb-6">
               Benimle iletişime geçmek için lütfen formu doldurun
             </h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form ref={ref} onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-lightGray mb-2">
                   İsim
@@ -180,7 +204,7 @@ const Contact = () => {
                   type="text"
                   id="name"
                   name="name"
-                  value={formData.name}
+                  value={form.name}
                   onChange={handleChange}
                   required
                   className="w-full bg-cardBg/50 border border-cardBorder/50 hover:border-borderAccent/70 transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up text-lightGray placeholder-lightGray/50 rounded-lg px-4 py-3 focus:border-accentBlue focus:ring-1 focus:ring-accentBlue outline-none"
@@ -195,26 +219,11 @@ const Contact = () => {
                   type="email"
                   id="email"
                   name="email"
-                  value={formData.email}
+                  value={form.email}
                   onChange={handleChange}
                   required
                   className="w-full bg-cardBg/50 border border-cardBorder/50 hover:border-borderAccent/70 transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up text-lightGray placeholder-lightGray/50 rounded-lg px-4 py-3 focus:border-accentBlue focus:ring-1 focus:ring-accentBlue outline-none"
                   placeholder="Email adresinizi girin"
-                />
-              </div>
-              <div>
-                <label htmlFor="subject" className="block text-lightGray mb-2">
-                  Konu
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                  className="w-full bg-cardBg/50 border border-cardBorder/50 hover:border-borderAccent/70 transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up text-lightGray placeholder-lightGray/50 rounded-lg px-4 py-3 focus:border-accentBlue focus:ring-1 focus:ring-accentBlue outline-none"
-                  placeholder="Konuyu girin"
                 />
               </div>
               <div>
@@ -224,7 +233,7 @@ const Contact = () => {
                 <textarea
                   id="message"
                   name="message"
-                  value={formData.message}
+                  value={form.message}
                   onChange={handleChange}
                   required
                   rows="4"
@@ -234,10 +243,23 @@ const Contact = () => {
               </div>
               <button
                 type="submit"
-                className="w-full bg-accentBlue text-darkPurple hover:bg-accentBlue/90 transition-colors py-3 rounded-lg font-semibold"
+                disabled={loading}
+                className={`w-full bg-accentBlue text-darkPurple hover:bg-accentBlue/90 transition-colors py-3 rounded-lg font-semibold ${
+                  loading ? "opacity-50 cursor-not-allowed" : ""
+                }`}
               >
-                Gönder
+                {loading ? "Gönderiliyor..." : "Gönder"}
               </button>
+              {success && (
+                <p className="text-green-500 text-center">
+                  Mesajınız başarıyla gönderildi!
+                </p>
+              )}
+              {error && (
+                <p className="text-red-500 text-center">
+                  Bir hata oluştu. Lütfen tekrar deneyin.
+                </p>
+              )}
             </form>
           </motion.div>
         </div>
