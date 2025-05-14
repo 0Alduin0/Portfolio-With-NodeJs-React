@@ -12,9 +12,12 @@ import {
 } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
 
+// EmailJS'i başlat
+emailjs.init(process.env.REACT_APP_EMAILJS_PUBLIC_KEY);
+
 const Contact = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { threshold: 0.1 });
+  const formRef = useRef(null);
+  const isInView = useInView(formRef, { threshold: 0.1 });
   const [hasAnimated, setHasAnimated] = useState(false);
   const [form, setForm] = useState({
     name: "",
@@ -41,23 +44,48 @@ const Contact = () => {
     setError(false);
     setSuccess(false);
 
+    // EmailJS bilgilerini kontrol et
+    const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+    const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+    const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+
+    console.log("EmailJS Config:", {
+      serviceId,
+      templateId,
+      publicKey: publicKey ? "***" : "missing",
+    });
+
+    if (!serviceId || !templateId || !publicKey) {
+      console.error("EmailJS configuration is missing");
+      setError(true);
+      setLoading(false);
+      return;
+    }
+
     try {
-      await emailjs.sendForm(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID,
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-        ref.current,
-        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+      const result = await emailjs.sendForm(
+        serviceId,
+        templateId,
+        formRef.current,
+        publicKey
       );
 
-      setSuccess(true);
-      setForm({
-        name: "",
-        email: "",
-        message: "",
-      });
+      console.log("EmailJS Result:", result);
+
+      if (result.text === "OK") {
+        setSuccess(true);
+        setForm({
+          name: "",
+          email: "",
+          message: "",
+        });
+      } else {
+        console.error("EmailJS Error: Unexpected response", result);
+        setError(true);
+      }
     } catch (error) {
+      console.error("EmailJS Error:", error);
       setError(true);
-      console.error("Error sending email:", error);
     } finally {
       setLoading(false);
     }
@@ -90,7 +118,7 @@ const Contact = () => {
     <section id="contact" className="py-20 relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
-          ref={ref}
+          ref={formRef}
           initial={{ opacity: 0, y: 20 }}
           animate={hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5 }}
@@ -195,7 +223,7 @@ const Contact = () => {
             <h3 className="text-lightGray font-semibold text-xl mb-6">
               Benimle iletişime geçmek için lütfen formu doldurun
             </h3>
-            <form ref={ref} onSubmit={handleSubmit} className="space-y-6">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-lightGray mb-2">
                   İsim
