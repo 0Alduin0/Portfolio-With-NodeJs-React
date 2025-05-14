@@ -12,9 +12,6 @@ import {
 } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
 
-// EmailJS'i başlat
-emailjs.init(process.env.REACT_APP_EMAILJS_PUBLIC_KEY);
-
 const Contact = () => {
   const formRef = useRef(null);
   const isInView = useInView(formRef, { threshold: 0.1 });
@@ -44,18 +41,18 @@ const Contact = () => {
     setError(false);
     setSuccess(false);
 
-    // EmailJS bilgilerini kontrol et
+    // EmailJS yapılandırmasını kontrol et
+    const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
     const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
     const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
-    const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
 
     console.log("EmailJS Config:", {
-      serviceId,
-      templateId,
       publicKey: publicKey ? "***" : "missing",
+      serviceId: serviceId || "missing",
+      templateId: templateId || "missing",
     });
 
-    if (!serviceId || !templateId || !publicKey) {
+    if (!publicKey || !serviceId || !templateId) {
       console.error("EmailJS configuration is missing");
       setError(true);
       setLoading(false);
@@ -63,16 +60,20 @@ const Contact = () => {
     }
 
     try {
-      const result = await emailjs.sendForm(
-        serviceId,
-        templateId,
-        formRef.current,
-        publicKey
-      );
+      // EmailJS'i başlat
+      emailjs.init(publicKey);
+
+      const templateParams = {
+        from_name: form.name,
+        from_email: form.email,
+        message: form.message,
+      };
+
+      const result = await emailjs.send(serviceId, templateId, templateParams);
 
       console.log("EmailJS Result:", result);
 
-      if (result.text === "OK") {
+      if (result.status === 200) {
         setSuccess(true);
         setForm({
           name: "",
