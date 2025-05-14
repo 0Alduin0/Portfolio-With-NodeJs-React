@@ -36,13 +36,13 @@ module.exports = {
         borderAccent: "#7c3aed", // Vurgu kenarlık rengi (orta mor)
       },
       animation: {
-        "gradient-x": "gradient-x 15s ease infinite",
-        "gradient-y": "gradient-y 15s ease infinite",
-        "gradient-xy": "gradient-xy 15s ease infinite",
-        glow: "glow 2s ease-in-out infinite",
-        "float-3d": "float-3d 6s ease-in-out infinite",
-        "scale-up": "scale-up 0.3s ease-in-out forwards",
-        "pulse-glow": "pulse-glow 2s ease-in-out infinite",
+        "gradient-x": "gradient-x 20s ease infinite",
+        "gradient-y": "gradient-y 20s ease infinite",
+        "gradient-xy": "gradient-xy 20s ease infinite",
+        glow: "glow 3s ease-in-out infinite",
+        "float-3d": "float-3d 8s ease-in-out infinite",
+        "scale-up": "scale-up 0.4s ease-in-out forwards",
+        "pulse-glow": "pulse-glow 3s ease-in-out infinite",
       },
       keyframes: {
         "gradient-y": {
@@ -78,24 +78,24 @@ module.exports = {
         glow: {
           "0%, 100%": {
             "box-shadow":
-              "0 0 25px rgba(124, 58, 237, 0.6), 0 0 50px rgba(124, 58, 237, 0.3)",
+              "0 0 20px rgba(124, 58, 237, 0.3), 0 0 40px rgba(124, 58, 237, 0.1)",
             transform: "translateY(0)",
           },
           "50%": {
             "box-shadow":
-              "0 0 35px rgba(124, 58, 237, 0.8), 0 0 70px rgba(124, 58, 237, 0.5)",
-            transform: "translateY(-5px)",
+              "0 0 25px rgba(124, 58, 237, 0.4), 0 0 50px rgba(124, 58, 237, 0.2)",
+            transform: "translateY(-3px)",
           },
         },
         "pulse-glow": {
           "0%, 100%": {
             "box-shadow":
-              "0 0 20px rgba(124, 58, 237, 0.4), 0 0 40px rgba(124, 58, 237, 0.2)",
+              "0 0 15px rgba(124, 58, 237, 0.2), 0 0 30px rgba(124, 58, 237, 0.1)",
             transform: "scale(1)",
           },
           "50%": {
             "box-shadow":
-              "0 0 30px rgba(124, 58, 237, 0.6), 0 0 60px rgba(124, 58, 237, 0.4)",
+              "0 0 20px rgba(124, 58, 237, 0.3), 0 0 40px rgba(124, 58, 237, 0.2)",
             transform: "scale(1.02)",
           },
         },
@@ -106,7 +106,7 @@ module.exports = {
           },
           "25%": {
             transform:
-              "perspective(1000px) rotateX(5deg) rotateY(5deg) translateZ(10px)",
+              "perspective(1000px) rotateX(3deg) rotateY(3deg) translateZ(5px)",
           },
           "50%": {
             transform:
@@ -114,7 +114,7 @@ module.exports = {
           },
           "75%": {
             transform:
-              "perspective(1000px) rotateX(-5deg) rotateY(-5deg) translateZ(10px)",
+              "perspective(1000px) rotateX(-3deg) rotateY(-3deg) translateZ(5px)",
           },
         },
         "scale-up": {
@@ -122,7 +122,7 @@ module.exports = {
             transform: "scale(1)",
           },
           "100%": {
-            transform: "scale(1.05)",
+            transform: "scale(1.03)",
           },
         },
       },

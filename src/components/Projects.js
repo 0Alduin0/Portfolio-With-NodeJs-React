@@ -156,7 +156,7 @@ const Projects = () => {
                   hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
                 }
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-cardBg/50 rounded-lg overflow-hidden border border-cardBorder/50 hover:border-borderAccent/70 transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up"
+                className="bg-cardBg/50 p-6 rounded-lg text-center border border-cardBorder/50 hover:border-borderAccent/70 transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up"
               >
                 <div className="relative h-48">
                   <img
@@ -217,7 +217,7 @@ const Projects = () => {
                   hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
                 }
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-darkBlue/30 p-6 rounded-lg text-center hover:bg-darkBlue/40 transition-colors"
+                className="bg-cardBg/50 p-6 rounded-lg text-center border border-cardBorder/50 hover:border-borderAccent/70 transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up"
               >
                 <div className="flex justify-center mb-4">{tech.icon}</div>
                 <h4 className="text-lightGray font-semibold">{tech.name}</h4>

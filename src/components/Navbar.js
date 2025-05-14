@@ -81,22 +81,20 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="md:hidden bg-darkPurple/95 mt-4 rounded-lg"
+            className={`${
+              isOpen ? "translate-x-0" : "translate-x-full"
+            } fixed top-0 right-0 h-screen w-64 bg-cardBg/50 backdrop-blur-lg border-l border-cardBorder/50 transition-transform duration-300 ease-in-out z-50`}
           >
             <div className="flex flex-col space-y-4 p-4">
               {navLinks.map((link, index) => (
-                <Link
+                <a
                   key={index}
-                  to={link.to}
-                  spy={true}
-                  smooth={true}
-                  offset={-70}
-                  duration={800}
-                  className="text-lightGray hover:text-accentBlue transition-colors cursor-pointer"
+                  href={`#${link.to}`}
+                  className="text-lightGray hover:text-accentBlue transition-colors px-4 py-2 rounded-lg hover:bg-cardHover/30"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.title}
-                </Link>
+                </a>
               ))}
             </div>
           </motion.div>
