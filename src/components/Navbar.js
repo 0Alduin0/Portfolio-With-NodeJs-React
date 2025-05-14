@@ -35,13 +35,26 @@ const Navbar = () => {
     setIsOpen(false);
     if (to === "home") {
       window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      const element = document.getElementById(to);
+      if (element) {
+        const offset = 70;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
     }
   };
 
   return (
     <nav
-      className={`sticky top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-darkPurple/20 py-2" : "bg-transparent py-4"
+      className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-darkPurple/20 backdrop-blur-sm py-2"
+          : "bg-transparent py-4"
       }`}
     >
       <div className="container mx-auto px-4">
@@ -99,7 +112,10 @@ const Navbar = () => {
                     key={index}
                     href={`#${link.to}`}
                     className="text-lightGray hover:text-accentBlue transition-colors px-4 py-2 rounded-lg hover:bg-cardHover/30"
-                    onClick={() => handleMenuClick(link.to)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleMenuClick(link.to);
+                    }}
                     whileTap={{ scale: 0.95 }}
                   >
                     {link.title}

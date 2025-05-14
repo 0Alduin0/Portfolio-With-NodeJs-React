@@ -9,15 +9,16 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="relative min-h-screen">
-      <div className="fixed inset-0 bg-gradient-to-br from-darkPurple via-darkBlue to-arkaplan animate-gradient-xy -z-10"></div>
+    <div className="min-h-screen bg-gradient-to-br from-darkPurple via-darkBlue to-darkPurple animate-gradient-xy overflow-x-hidden">
       <div className="relative">
-        <Navbar />
         <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Contact />
+        <Navbar />
+        <main className="relative z-10">
+          <About />
+          <Skills />
+          <Projects />
+          <Contact />
+        </main>
         <Footer />
       </div>
     </div>
