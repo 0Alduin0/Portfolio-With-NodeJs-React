@@ -162,6 +162,19 @@ const Projects = () => {
     setPage([page + 1, 1]);
   };
 
+  const handleDragEnd = (event, info, projectIndex) => {
+    const threshold = 50; // minimum kaydırma mesafesi
+    if (Math.abs(info.offset.x) > threshold) {
+      if (info.offset.x > 0) {
+        // Sağa kaydırma - önceki resim
+        handlePrevImage(projectIndex);
+      } else {
+        // Sola kaydırma - sonraki resim
+        handleNextImage(projectIndex);
+      }
+    }
+  };
+
   return (
     <section id="projects" className="py-20">
       <div className="container mx-auto px-4">
@@ -232,7 +245,12 @@ const Projects = () => {
                         x: { type: "spring", stiffness: 300, damping: 30 },
                         opacity: { duration: 0.2 },
                       }}
-                      className="w-full h-full object-cover rounded-lg absolute inset-0"
+                      className="w-full h-full object-cover rounded-lg absolute inset-0 cursor-grab active:cursor-grabbing"
+                      drag="x"
+                      dragConstraints={{ left: 0, right: 0 }}
+                      dragElastic={0.7}
+                      onDragEnd={(e, info) => handleDragEnd(e, info, index)}
+                      whileTap={{ cursor: "grabbing" }}
                     />
                   </AnimatePresence>
                   <div className="absolute inset-0 flex items-center justify-between opacity-0 group-hover:opacity-100 transition-opacity duration-300">
