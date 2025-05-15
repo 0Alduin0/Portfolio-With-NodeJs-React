@@ -67,7 +67,7 @@ const Hero = () => {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-accentBlue text-darkPurple px-8 py-3 rounded-lg font-semibold hover:bg-lightBlue transition-colors flex items-center justify-center gap-2 w-full sm:w-auto"
+                  className="bg-accentBlue text-darkPurple px-8 py-3 rounded-lg font-semibold hover:bg-lightBlue transition-colors flex items-center justify-center gap-2 w-full sm:w-auto hover:animate-border-glow"
                 >
                   <FaGamepad className="text-xl" />
                   Projelerim
@@ -83,7 +83,7 @@ const Hero = () => {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-transparent border-2 border-accentBlue text-accentBlue px-8 py-3 rounded-lg font-semibold hover:bg-accentBlue/10 transition-colors w-full sm:w-auto"
+                  className="bg-transparent border-2 border-accentBlue text-accentBlue px-8 py-3 rounded-lg font-semibold hover:bg-accentBlue/10 transition-colors w-full sm:w-auto hover:animate-border-glow"
                 >
                   İletişim
                 </motion.button>
@@ -92,7 +92,7 @@ const Hero = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={handleDownloadCV}
-                className="bg-transparent border-2 border-accentBlue text-accentBlue px-8 py-3 rounded-lg font-semibold hover:bg-accentBlue/10 transition-colors w-full sm:w-auto flex items-center justify-center gap-2"
+                className="bg-transparent border-2 border-accentBlue text-accentBlue px-8 py-3 rounded-lg font-semibold hover:bg-accentBlue/10 transition-colors w-full sm:w-auto flex items-center justify-center gap-2 hover:animate-border-glow"
               >
                 <FaFileDownload className="text-xl" />
                 CV İndir

@@ -67,7 +67,7 @@ const Skills = () => {
                 hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
               }
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-cardBg/50 p-6 rounded-lg border border-cardBorder/50 hover:border-borderAccent/70 transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up"
+              className="bg-cardBg/50 p-6 rounded-lg border border-cardBorder/50 hover:border-borderAccent/70 transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up hover:animate-border-glow"
             >
               <div className="flex items-center mb-4">
                 <div className="mr-4">{capability.icon}</div>
