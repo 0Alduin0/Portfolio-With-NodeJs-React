@@ -91,9 +91,10 @@ const Projects = () => {
       description:
         "karşınızdaki herkesi öldürmeye çalıştığınız çok oyunculu bir oyun",
       images: [
-        require("../assets/images/screenshots1.jpg"),
-        require("../assets/images/screenshots2.jpg"),
-        require("../assets/images/screenshots3.jpg"),
+        require("../assets/images/screenshots8.jpg"),
+        require("../assets/images/screenshots9.jpg"),
+        require("../assets/images/screenshots10.jpg"),
+        require("../assets/images/screenshots11.jpg"),
       ],
       github: "https://github.com/0Alduin0/Shooter-Game",
       live: "https://project3.com",
