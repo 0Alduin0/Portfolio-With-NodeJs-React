@@ -100,6 +100,7 @@ const Hero = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
+            whileHover={{ scale: 1.2, rotateZ: 10 }} // Hover efekti burada
             className="flex-1 w-full max-w-sm sm:max-w-md md:max-w-lg"
           >
             <Lottie
