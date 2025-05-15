@@ -38,8 +38,8 @@ module.exports = {
         "gradient-xy": "gradient-xy 20s ease infinite",
         glow: "glow 3s ease-in-out infinite",
         "float-3d": "float-3d 8s ease-in-out infinite",
-        "scale-up": "scale-up 0.4s ease-in-out forwards",
         "pulse-glow": "pulse-glow 3s ease-in-out infinite",
+        "scale-up": "scale-up 0.4s ease-in-out forwards",
       },
       keyframes: {
         "gradient-y": {

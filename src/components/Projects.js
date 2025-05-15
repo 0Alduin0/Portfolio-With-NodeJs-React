@@ -230,7 +230,7 @@ const Projects = () => {
                   hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
                 }
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-cardBg/50 p-4 sm:p-6 rounded-lg text-center border border-cardBorder/50 hover:border-borderAccent/70 transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up"
+                className="bg-cardBg/50 p-4 sm:p-6 rounded-lg text-center border border-cardBorder/50 hover:border-borderAccent/70 transition-all duration-300 animate-float-3d hover:animate-scale-up "
               >
                 <div className="relative h-48 sm:h-56 md:h-64 group overflow-hidden">
                   <AnimatePresence initial={false} custom={direction}>
