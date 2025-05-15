@@ -1,6 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaGamepad, FaGithub, FaLinkedin } from "react-icons/fa";
+import {
+  FaGamepad,
+  FaGithub,
+  FaLinkedin,
+  FaFileDownload,
+} from "react-icons/fa";
 import Lottie from "lottie-react";
 import animationData from "../assets/animation.json";
 import { Link } from "react-scroll";
@@ -12,9 +17,13 @@ const Hero = () => {
   React.useEffect(() => {
     const interval = setInterval(() => {
       setCurrentRoleIndex((prevIndex) => (prevIndex + 1) % roles.length);
-    }, 3000);
+    }, 2000);
     return () => clearInterval(interval);
   }, []);
+
+  const handleDownloadCV = () => {
+    window.open("/Enes_Yürekli_CV.pdf", "_blank");
+  };
 
   return (
     <section
@@ -79,6 +88,15 @@ const Hero = () => {
                   İletişim
                 </motion.button>
               </Link>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={handleDownloadCV}
+                className="bg-transparent border-2 border-accentBlue text-accentBlue px-8 py-3 rounded-lg font-semibold hover:bg-accentBlue/10 transition-colors w-full sm:w-auto flex items-center justify-center gap-2"
+              >
+                <FaFileDownload className="text-xl" />
+                CV İndir
+              </motion.button>
             </div>
           </motion.div>
 
