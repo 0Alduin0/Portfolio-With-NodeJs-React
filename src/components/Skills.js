@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { FaReact, FaNodeJs, FaDatabase, FaUnity, FaCss3, FaHtml5, FaAdn, FaWeebly } from "react-icons/fa";
+import { FaReact, FaNodeJs, FaUnity } from "react-icons/fa";
 import Lottie from "lottie-react";
 import animation3 from "../assets/animation3.json";
 import animation4 from "../assets/animation4.json";
@@ -16,7 +16,7 @@ const Skills = () => {
     if (isInView && !hasAnimated) {
       setHasAnimated(true);
     }
-  }, [isInView]);
+  }, [isInView, hasAnimated]);
 
   const capabilities = [
     {
@@ -58,7 +58,7 @@ const Skills = () => {
         </motion.div>
 
         {/* Neler Yapabilirim */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {capabilities.map((capability, index) => (
             <motion.div
               key={index}
@@ -67,16 +67,18 @@ const Skills = () => {
                 hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
               }
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-cardBg/50 p-6 rounded-lg border border-cardBorder/50 hover:border-borderAccent/70 transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up hover:animate-border-glow"
+              className="bg-cardBg/50 p-4 sm:p-6 rounded-lg border border-cardBorder/50 hover:border-borderAccent/70 transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up"
             >
-              <div className="flex items-center mb-4">
-                <div className="mr-4">{capability.icon}</div>
-                <h4 className="text-lightGray font-semibold text-xl">
+              <div className="flex items-center mb-3 sm:mb-4">
+                <div className="mr-3 sm:mr-4">{capability.icon}</div>
+                <h4 className="text-lightGray font-semibold text-lg sm:text-xl">
                   {capability.title}
                 </h4>
               </div>
-              <p className="text-lightGray/80 mb-6">{capability.description}</p>
-              <div className="w-full h-48">
+              <p className="text-lightGray/80 text-sm sm:text-base mb-4 sm:mb-6">
+                {capability.description}
+              </p>
+              <div className="w-full h-36 sm:h-40 md:h-48">
                 <Lottie
                   animationData={capability.animation}
                   loop={true}

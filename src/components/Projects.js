@@ -56,7 +56,7 @@ const Projects = () => {
     if (isInView && !hasAnimated) {
       setHasAnimated(true);
     }
-  }, [isInView]);
+  }, [isInView, hasAnimated]);
 
   const projects = [
     {
@@ -221,7 +221,7 @@ const Projects = () => {
 
         {/* Projects Tab */}
         {activeTab === "projects" && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {projects.map((project, index) => (
               <motion.div
                 key={index}
@@ -230,9 +230,9 @@ const Projects = () => {
                   hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
                 }
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-cardBg/50 p-6 rounded-lg text-center border border-cardBorder/50 hover:border-borderAccent/70 transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up hover:animate-border-glow"
+                className="bg-cardBg/50 p-4 sm:p-6 rounded-lg text-center border border-cardBorder/50 hover:border-borderAccent/70 transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up"
               >
-                <div className="relative h-64 group overflow-hidden">
+                <div className="relative h-48 sm:h-56 md:h-64 group overflow-hidden">
                   <AnimatePresence initial={false} custom={direction}>
                     <motion.img
                       key={currentImageIndex[index] || 0}
@@ -282,18 +282,18 @@ const Projects = () => {
                     ))}
                   </div>
                 </div>
-                <div className="p-6">
-                  <h3 className="text-lightGray font-semibold text-xl mb-2">
+                <div className="p-4 sm:p-6">
+                  <h3 className="text-lightGray font-semibold text-lg sm:text-xl mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-lightGray/80 mb-4">
+                  <p className="text-lightGray/80 text-sm sm:text-base mb-4">
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.technologies.map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="px-3 py-1 bg-accentBlue/20 text-accentBlue rounded-full text-sm"
+                        className="px-2 sm:px-3 py-1 bg-accentBlue/20 text-accentBlue rounded-full text-xs sm:text-sm"
                       >
                         {tech}
                       </span>
@@ -306,7 +306,7 @@ const Projects = () => {
                       rel="noopener noreferrer"
                       className="text-lightGray/80 hover:text-lightGray transition-colors"
                     >
-                      <FaGithub className="text-2xl" />
+                      <FaGithub className="text-xl sm:text-2xl" />
                     </a>
                     <a
                       href={project.live}
@@ -314,7 +314,7 @@ const Projects = () => {
                       rel="noopener noreferrer"
                       className="text-lightGray/80 hover:text-lightGray transition-colors"
                     >
-                      <FaExternalLinkAlt className="text-2xl" />
+                      <FaExternalLinkAlt className="text-xl sm:text-2xl" />
                     </a>
                   </div>
                 </div>
@@ -325,7 +325,7 @@ const Projects = () => {
 
         {/* Technologies Tab */}
         {activeTab === "technologies" && (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
             {technologies.map((tech, index) => (
               <motion.div
                 key={index}
@@ -334,10 +334,14 @@ const Projects = () => {
                   hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
                 }
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-cardBg/50 p-6 rounded-lg text-center border border-cardBorder/50 hover:border-borderAccent/70 transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up hover:animate-border-glow"
+                className="bg-cardBg/50 p-4 sm:p-6 rounded-lg text-center border border-cardBorder/50 hover:border-borderAccent/70 transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up"
               >
-                <div className="flex justify-center mb-4">{tech.icon}</div>
-                <h4 className="text-lightGray font-semibold">{tech.name}</h4>
+                <div className="flex justify-center mb-3 sm:mb-4">
+                  {tech.icon}
+                </div>
+                <h4 className="text-lightGray font-semibold text-sm sm:text-base">
+                  {tech.name}
+                </h4>
               </motion.div>
             ))}
           </div>

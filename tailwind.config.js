@@ -19,15 +19,12 @@ module.exports = {
         // Vurgu rengi - butonlar, ikonlar, hover efektleri (tüm componentler)
         accentBlue: "#8b5cf6",
 
-        // Yeni renkler
         // Butonlar için
         buttonPrimary: "#7c3aed", // Ana buton rengi (mor)
         buttonHover: "#6d28d9", // Buton hover rengi (koyu mor)
-        buttonSecondary: "#4c1d95", // İkincil buton rengi (çok koyu mor)
 
         // Kartlar için
         cardBg: "#312e81", // Kart arka plan rengi (koyu mor)
-        cardHover: "#4338ca", // Kart hover rengi (orta mor)
         cardBorder: "#6366f1", // Kart kenarlık rengi (açık mor)
 
         // Kenarlıklar için
@@ -43,9 +40,18 @@ module.exports = {
         "float-3d": "float-3d 8s ease-in-out infinite",
         "scale-up": "scale-up 0.4s ease-in-out forwards",
         "pulse-glow": "pulse-glow 3s ease-in-out infinite",
-        "border-glow": "border-glow 2s ease-in-out infinite",
       },
       keyframes: {
+        "gradient-y": {
+          "0%, 100%": {
+            "background-size": "400% 400%",
+            "background-position": "center top",
+          },
+          "50%": {
+            "background-size": "200% 200%",
+            "background-position": "center center",
+          },
+        },
         "gradient-x": {
           "0%, 100%": {
             "background-size": "200% 200%",
@@ -54,16 +60,6 @@ module.exports = {
           "50%": {
             "background-size": "200% 200%",
             "background-position": "right center",
-          },
-        },
-        "gradient-y": {
-          "0%, 100%": {
-            "background-size": "400% 400%",
-            "background-position": "center top",
-          },
-          "50%": {
-            "background-size": "200% 200%",
-            "background-position": "center bottom",
           },
         },
         "gradient-xy": {
@@ -79,19 +75,43 @@ module.exports = {
         glow: {
           "0%, 100%": {
             "box-shadow":
-              "0 0 5px theme('colors.accentBlue'), 0 0 20px theme('colors.accentBlue')",
+              "0 0 20px rgba(124, 58, 237, 0.3), 0 0 40px rgba(124, 58, 237, 0.1)",
+            transform: "translateY(0)",
           },
           "50%": {
             "box-shadow":
-              "0 0 20px theme('colors.accentBlue'), 0 0 40px theme('colors.accentBlue')",
+              "0 0 25px rgba(124, 58, 237, 0.4), 0 0 50px rgba(124, 58, 237, 0.2)",
+            transform: "translateY(-3px)",
+          },
+        },
+        "pulse-glow": {
+          "0%, 100%": {
+            "box-shadow":
+              "0 0 15px rgba(124, 58, 237, 0.2), 0 0 30px rgba(124, 58, 237, 0.1)",
+            transform: "scale(1)",
+          },
+          "50%": {
+            "box-shadow":
+              "0 0 20px rgba(124, 58, 237, 0.3), 0 0 40px rgba(124, 58, 237, 0.2)",
+            transform: "scale(1.02)",
           },
         },
         "float-3d": {
           "0%, 100%": {
-            transform: "translateY(0) rotateX(0) rotateY(0)",
+            transform:
+              "perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0)",
+          },
+          "25%": {
+            transform:
+              "perspective(1000px) rotateX(3deg) rotateY(3deg) translateZ(5px)",
           },
           "50%": {
-            transform: "translateY(-10px) rotateX(5deg) rotateY(5deg)",
+            transform:
+              "perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0)",
+          },
+          "75%": {
+            transform:
+              "perspective(1000px) rotateX(-3deg) rotateY(-3deg) translateZ(5px)",
           },
         },
         "scale-up": {
@@ -99,27 +119,7 @@ module.exports = {
             transform: "scale(1)",
           },
           "100%": {
-            transform: "scale(1.05)",
-          },
-        },
-        "pulse-glow": {
-          "0%, 100%": {
-            "box-shadow":
-              "0 0 5px theme('colors.accentBlue'), 0 0 10px theme('colors.accentBlue')",
-          },
-          "50%": {
-            "box-shadow":
-              "0 0 20px theme('colors.accentBlue'), 0 0 30px theme('colors.accentBlue')",
-          },
-        },
-        "border-glow": {
-          "0%, 100%": {
-            "border-color": "theme('colors.accentBlue')",
-            "box-shadow": "0 0 5px theme('colors.accentBlue')",
-          },
-          "50%": {
-            "border-color": "theme('colors.lightBlue')",
-            "box-shadow": "0 0 15px theme('colors.lightBlue')",
+            transform: "scale(1.03)",
           },
         },
       },
