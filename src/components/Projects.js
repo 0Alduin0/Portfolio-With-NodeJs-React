@@ -6,6 +6,7 @@ import {
   FaExternalLinkAlt,
   FaChevronLeft,
   FaChevronRight,
+  FaCertificate,
 } from "react-icons/fa";
 import {
   SiJavascript,
@@ -142,6 +143,19 @@ const Projects = () => {
     { name: "Github", icon: <SiGithub className="text-4xl text-[#181717]" /> },
   ];
 
+  const certificates = [
+    {
+      id: 1,
+      title: "Unity Essentials",
+      issuer: "Unity",
+      date: "2025",
+      image: require("../assets/images/unity-essentials-pathway.png"),
+      link: "https://www.credly.com/badges/68c339d6-b0fc-4ea9-9955-e16cc21e3aae",
+    },
+
+    // Diğer sertifikalarınızı buraya ekleyebilirsiniz
+  ];
+
   const handlePrevImage = (projectIndex) => {
     setCurrentImageIndex((prev) => ({
       ...prev,
@@ -216,6 +230,16 @@ const Projects = () => {
             }`}
           >
             Teknolojiler
+          </button>
+          <button
+            onClick={() => setActiveTab("certificates")}
+            className={`px-6 py-3 rounded-lg font-semibold transition-colors ${
+              activeTab === "certificates"
+                ? "bg-blue-600 text-white"
+                : "bg-gray-800 text-gray-400 hover:bg-gray-700"
+            }`}
+          >
+            Sertifikalarım
           </button>
         </div>
 
@@ -342,6 +366,51 @@ const Projects = () => {
                 <h4 className="text-lightGray font-semibold text-sm sm:text-base">
                   {tech.name}
                 </h4>
+              </motion.div>
+            ))}
+          </div>
+        )}
+
+        {/* Certificates Tab */}
+        {activeTab === "certificates" && (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            {certificates.map((certificate, index) => (
+              <motion.div
+                key={certificate.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={
+                  hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+                }
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-cardBg/50 p-4 sm:p-6 rounded-lg text-center border border-cardBorder/50 hover:border-borderAccent/70 transition-all duration-300 animate-float-3d hover:animate-scale-up"
+              >
+                <div className="relative h-48 sm:h-56 md:h-64 mb-4">
+                  <img
+                    src={certificate.image}
+                    alt={certificate.title}
+                    className="w-full h-full object-contain rounded-lg"
+                  />
+                </div>
+                <div className="p-4">
+                  <h3 className="text-lightGray font-semibold text-lg sm:text-xl mb-2">
+                    {certificate.title}
+                  </h3>
+                  <p className="text-lightGray/80 text-sm sm:text-base mb-2">
+                    {certificate.issuer}
+                  </p>
+                  <p className="text-lightGray/60 text-sm mb-4">
+                    {certificate.date}
+                  </p>
+                  <a
+                    href={certificate.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center space-x-2 text-accentBlue hover:text-accentBlue/80 transition-colors"
+                  >
+                    <FaCertificate className="text-xl" />
+                    <span>Sertifikayı Görüntüle</span>
+                  </a>
+                </div>
               </motion.div>
             ))}
           </div>
