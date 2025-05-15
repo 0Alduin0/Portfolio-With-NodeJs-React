@@ -210,10 +210,10 @@ const Projects = () => {
         </motion.div>
 
         {/* Tab Buttons */}
-        <div className="flex justify-center space-x-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-12">
           <button
             onClick={() => setActiveTab("projects")}
-            className={`px-6 py-3 rounded-lg font-semibold transition-colors ${
+            className={`px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold transition-colors text-sm sm:text-base whitespace-nowrap ${
               activeTab === "projects"
                 ? "bg-blue-600 text-white"
                 : "bg-gray-800 text-gray-400 hover:bg-gray-700"
@@ -223,7 +223,7 @@ const Projects = () => {
           </button>
           <button
             onClick={() => setActiveTab("technologies")}
-            className={`px-6 py-3 rounded-lg font-semibold transition-colors ${
+            className={`px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold transition-colors text-sm sm:text-base whitespace-nowrap ${
               activeTab === "technologies"
                 ? "bg-blue-600 text-white"
                 : "bg-gray-800 text-gray-400 hover:bg-gray-700"
@@ -233,7 +233,7 @@ const Projects = () => {
           </button>
           <button
             onClick={() => setActiveTab("certificates")}
-            className={`px-6 py-3 rounded-lg font-semibold transition-colors ${
+            className={`px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold transition-colors text-sm sm:text-base whitespace-nowrap ${
               activeTab === "certificates"
                 ? "bg-blue-600 text-white"
                 : "bg-gray-800 text-gray-400 hover:bg-gray-700"
@@ -254,9 +254,9 @@ const Projects = () => {
                   hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
                 }
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-cardBg/50 p-4 sm:p-6 rounded-lg text-center border border-cardBorder/50 hover:border-borderAccent/70 transition-all duration-300 animate-float-3d hover:animate-scale-up "
+                className="bg-cardBg/50 p-3 sm:p-4 md:p-6 rounded-lg text-center border border-cardBorder/50 hover:border-borderAccent/70 transition-all duration-300 animate-float-3d hover:animate-scale-up"
               >
-                <div className="relative h-48 sm:h-56 md:h-64 group overflow-hidden">
+                <div className="relative h-40 sm:h-48 md:h-56 lg:h-64 group overflow-hidden">
                   <AnimatePresence initial={false} custom={direction}>
                     <motion.img
                       key={currentImageIndex[index] || 0}
@@ -306,18 +306,18 @@ const Projects = () => {
                     ))}
                   </div>
                 </div>
-                <div className="p-4 sm:p-6">
-                  <h3 className="text-lightGray font-semibold text-lg sm:text-xl mb-2">
+                <div className="p-3 sm:p-4 md:p-6">
+                  <h3 className="text-lightGray font-semibold text-base sm:text-lg md:text-xl mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-lightGray/80 text-sm sm:text-base mb-4">
+                  <p className="text-lightGray/80 text-xs sm:text-sm md:text-base mb-3 sm:mb-4">
                     {project.description}
                   </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="flex flex-wrap gap-1 sm:gap-2 mb-3 sm:mb-4">
                     {project.technologies.map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="px-2 sm:px-3 py-1 bg-accentBlue/20 text-accentBlue rounded-full text-xs sm:text-sm"
+                        className="px-2 py-1 bg-accentBlue/20 text-accentBlue rounded-full text-xs"
                       >
                         {tech}
                       </span>
@@ -330,7 +330,7 @@ const Projects = () => {
                       rel="noopener noreferrer"
                       className="text-lightGray/80 hover:text-lightGray transition-colors"
                     >
-                      <FaGithub className="text-xl sm:text-2xl" />
+                      <FaGithub className="text-lg sm:text-xl md:text-2xl" />
                     </a>
                     <a
                       href={project.live}
@@ -338,7 +338,7 @@ const Projects = () => {
                       rel="noopener noreferrer"
                       className="text-lightGray/80 hover:text-lightGray transition-colors"
                     >
-                      <FaExternalLinkAlt className="text-xl sm:text-2xl" />
+                      <FaExternalLinkAlt className="text-lg sm:text-xl md:text-2xl" />
                     </a>
                   </div>
                 </div>
@@ -349,7 +349,7 @@ const Projects = () => {
 
         {/* Technologies Tab */}
         {activeTab === "technologies" && (
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
             {technologies.map((tech, index) => (
               <motion.div
                 key={index}
@@ -358,12 +358,12 @@ const Projects = () => {
                   hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
                 }
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-cardBg/50 p-4 sm:p-6 rounded-lg text-center border border-cardBorder/50 hover:border-borderAccent/70 transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up"
+                className="bg-cardBg/50 p-3 sm:p-4 md:p-6 rounded-lg text-center border border-cardBorder/50 hover:border-borderAccent/70 transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up"
               >
-                <div className="flex justify-center mb-3 sm:mb-4">
+                <div className="flex justify-center mb-2 sm:mb-3 md:mb-4">
                   {tech.icon}
                 </div>
-                <h4 className="text-lightGray font-semibold text-sm sm:text-base">
+                <h4 className="text-lightGray font-semibold text-xs sm:text-sm md:text-base">
                   {tech.name}
                 </h4>
               </motion.div>
@@ -382,32 +382,32 @@ const Projects = () => {
                   hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
                 }
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-cardBg/50 p-4 sm:p-6 rounded-lg text-center border border-cardBorder/50 hover:border-borderAccent/70 transition-all duration-300 animate-float-3d hover:animate-scale-up"
+                className="bg-cardBg/50 p-3 sm:p-4 md:p-6 rounded-lg text-center border border-cardBorder/50 hover:border-borderAccent/70 transition-all duration-300 animate-float-3d hover:animate-scale-up"
               >
-                <div className="relative h-48 sm:h-56 md:h-64 mb-4">
+                <div className="relative h-40 sm:h-48 md:h-56 lg:h-64 mb-3 sm:mb-4">
                   <img
                     src={certificate.image}
                     alt={certificate.title}
                     className="w-full h-full object-contain rounded-lg"
                   />
                 </div>
-                <div className="p-4">
-                  <h3 className="text-lightGray font-semibold text-lg sm:text-xl mb-2">
+                <div className="p-3 sm:p-4">
+                  <h3 className="text-lightGray font-semibold text-base sm:text-lg md:text-xl mb-2">
                     {certificate.title}
                   </h3>
-                  <p className="text-lightGray/80 text-sm sm:text-base mb-2">
+                  <p className="text-lightGray/80 text-xs sm:text-sm md:text-base mb-2">
                     {certificate.issuer}
                   </p>
-                  <p className="text-lightGray/60 text-sm mb-4">
+                  <p className="text-lightGray/60 text-xs sm:text-sm mb-3 sm:mb-4">
                     {certificate.date}
                   </p>
                   <a
                     href={certificate.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center space-x-2 text-accentBlue hover:text-accentBlue/80 transition-colors"
+                    className="inline-flex items-center space-x-2 text-accentBlue hover:text-accentBlue/80 transition-colors text-sm sm:text-base"
                   >
-                    <FaCertificate className="text-xl" />
+                    <FaCertificate className="text-lg sm:text-xl" />
                     <span>Sertifikayı Görüntüle</span>
                   </a>
                 </div>
