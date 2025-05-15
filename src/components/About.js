@@ -18,7 +18,7 @@ const About = () => {
     if (isInView && !hasAnimated) {
       setHasAnimated(true);
     }
-  }, [isInView]);
+  }, [isInView, hasAnimated]);
 
   const skills = [
     {
@@ -48,7 +48,7 @@ const About = () => {
           {/* Sol taraf - Metin içeriği */}
           <motion.div
             ref={ref}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 20 }}
             animate={hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
             className="flex-1"

@@ -8,11 +8,13 @@ import {
   FaGithub,
   FaLinkedin,
 } from "react-icons/fa";
+import { FaSquareXTwitter ,FaFacebook } from "react-icons/fa6";
+
 import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const formRef = useRef(null);
-  const isInView = useInView(formRef, { threshold: 0.1 });
+  const isInView = useInView(formRef, { threshold: 1 });
   const [hasAnimated, setHasAnimated] = useState(false);
   const [form, setForm] = useState({
     name: "",
@@ -100,6 +102,16 @@ const Contact = () => {
       icon: <FaLinkedin className="text-3xl" />,
       title: "LinkedIn",
       link: "https://www.linkedin.com/in/enes-yürekli-1483b2332/",
+    },
+    {
+      icon: <FaSquareXTwitter className="text-3xl" />,
+      title: "X",
+      link: "https://x.com/?lang=tr",
+    },
+    {
+      icon: <FaFacebook className="text-3xl" />,
+      title: "Facebook",
+      link: "https://www.facebook.com/?locale=tr_TR",
     },
   ];
 
