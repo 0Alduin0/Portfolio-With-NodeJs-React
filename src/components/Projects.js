@@ -191,7 +191,7 @@ const Projects = () => {
             Projelerim ve yeteneklerim
           </h2>
           <p className="text-lightGray/80 max-w-2xl mx-auto">
-            Geliştirdiğim projeler ve kullandığım teknolojiler
+            Geliştirdiğim projeler ve kullanabildiğim teknolojiler
           </p>
         </motion.div>
 

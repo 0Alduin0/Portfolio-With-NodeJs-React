@@ -101,7 +101,7 @@ const Contact = () => {
     {
       icon: <FaLinkedin className="text-3xl" />,
       title: "LinkedIn",
-      link: "https://www.linkedin.com/in/enes-yürekli-0b0b0b0b0/",
+      link: "https://www.linkedin.com/in/enes-yürekli-1483b2332/",
     },
     {
       icon: <FaTwitter className="text-3xl" />,
@@ -149,10 +149,10 @@ const Contact = () => {
                   <div>
                     <h3 className="text-lightGray font-semibold">Email</h3>
                     <a
-                      href="mailto:enes.yurekli@ogr.balikesir.edu.tr"
+                      href="mailto:muhammedenesyurekli@gmail.com"
                       className="text-lightGray/80 hover:text-accentBlue transition-colors"
                     >
-                      enes.yurekli@ogr.balikesir.edu.tr
+                      muhammedenesyurekli@gmail.com
                     </a>
                   </div>
                 </div>
@@ -161,10 +161,10 @@ const Contact = () => {
                   <div>
                     <h3 className="text-lightGray font-semibold">Telefon</h3>
                     <a
-                      href="tel:+905555555555"
+                      href="tel:+905386730994"
                       className="text-lightGray/80 hover:text-accentBlue transition-colors"
                     >
-                      +90 555 555 55 55
+                      +90 538 673 09 94
                     </a>
                   </div>
                 </div>
