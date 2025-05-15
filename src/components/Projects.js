@@ -77,9 +77,10 @@ const Projects = () => {
       description:
         "Karşınızdaki kurpiyere karşı oynadığınız, çektiğiniz kartla 21 puana daha çok yaklaşanın kazandığı bir oyun.",
       images: [
-        require("../assets/images/screenshots1.jpg"),
-        require("../assets/images/screenshots2.jpg"),
-        require("../assets/images/screenshots3.jpg"),
+        require("../assets/images/screenshots4.jpg"),
+        require("../assets/images/screenshots5.jpg"),
+        require("../assets/images/screenshots6.jpg"),
+        require("../assets/images/screenshots7.jpg"),
       ],
       github: "https://github.com/0Alduin0/BlackJack-Game",
       live: "https://project2.com",
@@ -230,7 +231,7 @@ const Projects = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-cardBg/50 p-6 rounded-lg text-center border border-cardBorder/50 hover:border-borderAccent/70 transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up"
               >
-                <div className="relative h-48 group overflow-hidden">
+                <div className="relative h-64 group overflow-hidden">
                   <AnimatePresence initial={false} custom={direction}>
                     <motion.img
                       key={currentImageIndex[index] || 0}
@@ -245,7 +246,7 @@ const Projects = () => {
                         x: { type: "spring", stiffness: 300, damping: 30 },
                         opacity: { duration: 0.2 },
                       }}
-                      className="w-full h-full object-cover rounded-lg absolute inset-0 cursor-grab active:cursor-grabbing"
+                      className="w-full h-full object-contain rounded-lg absolute inset-0 cursor-grab active:cursor-grabbing"
                       drag="x"
                       dragConstraints={{ left: 0, right: 0 }}
                       dragElastic={0.7}
