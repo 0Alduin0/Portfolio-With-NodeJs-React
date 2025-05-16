@@ -83,17 +83,15 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <motion.button
-            className="md:hidden text-lightGray focus:outline-none"
-            onClick={() => setIsOpen(!isOpen)}
-            whileTap={{ scale: 0.95 }}
-          >
-            {isOpen ? (
-              <FaTimes className="text-2xl" />
-            ) : (
+          {!isOpen && (
+            <motion.button
+              className="md:hidden text-lightGray focus:outline-none"
+              onClick={() => setIsOpen("about")}
+              whileTap={{ scale: 0.95 }}
+            >
               <FaBars className="text-2xl" />
-            )}
-          </motion.button>
+            </motion.button>
+          )}
         </div>
 
         {/* Mobile Menu */}
@@ -104,9 +102,18 @@ const Navbar = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: "100%" }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="fixed top-0 right-0 h-screen w-64 bg-cardBg/50 backdrop-blur-lg border-l border-cardBorder/50 z-50"
+              className="fixed top-0 right-0 h-screen w-64 bg-cardBg/90 backdrop-blur-lg border-l border-cardBorder/50 z-50"
             >
-              <div className="flex flex-col space-y-4 p-4">
+              {/* Close (X) Button - larger clickable area */}
+              <button
+                onClick={() => setIsOpen(false)}
+                className="absolute top-4 right-4 w-12 h-12 flex items-center justify-center rounded-full bg-transparent hover:bg-cardHover/40 focus:outline-none z-50"
+                aria-label="Menüyü Kapat"
+                tabIndex={0}
+              >
+                <FaTimes className="text-3xl text-lightGray pointer-events-none" />
+              </button>
+              <div className="flex flex-col space-y-4 p-4 mt-16">
                 {navLinks.map((link, index) => (
                   <motion.a
                     key={index}
