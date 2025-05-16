@@ -225,8 +225,7 @@ const Contact = () => {
             <h3 className="text-lightGray font-semibold text-xl mb-6">
               Benimle iletişime geçmek için lütfen formu doldurun
             </h3>
-            <form ref={formRef}
-             onSubmit={handleSubmit} className="space-y-6">
+            <form  onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-lightGray mb-2">
                   İsim
