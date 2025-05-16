@@ -1,13 +1,15 @@
 import React from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
   return (
     <footer className="bg-darkBlue/30 py-8">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="text-lightGray mb-4 md:mb-0">
-            <p>&copy; 2024 Enes Yürekli. Tüm hakları saklıdır.</p>
+            <p>{t("footer.copyright")}</p>
           </div>
           <div className="flex space-x-6">
             <a
@@ -19,7 +21,7 @@ const Footer = () => {
               <FaGithub className="text-2xl" />
             </a>
             <a
-              href="https://www.linkedin.com/in/enes-yürekli-0b0b0b0b0/"
+              href="https://www.linkedin.com/in/enes-yurekli-0b0b0b0b0/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-lightGray hover:text-accentBlue transition-colors"

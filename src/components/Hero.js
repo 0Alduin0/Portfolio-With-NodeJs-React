@@ -7,12 +7,11 @@ import { Link } from "react-scroll";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-
-
-
+import { useTranslation } from 'react-i18next';
 
 const Hero = () => {
-  const roles = ["Unity Developer", "Full Stack Developer"];
+  const { t } = useTranslation();
+  const roles = [t('hero.role1'), t('hero.role2')];
   const [currentRoleIndex, setCurrentRoleIndex] = React.useState(0);
 
   React.useEffect(() => {
@@ -71,7 +70,7 @@ const Hero = () => {
                   className="bg-accentBlue text-darkPurple px-6 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold hover:bg-lightBlue transition-colors flex items-center justify-center gap-2 w-full sm:w-auto hover:animate-pulse-glow"
                 >
                   <FaGamepad className="text-lg sm:text-xl" />
-                  Projelerim
+                  {t('hero.projects_btn')}
                 </motion.button>
               </Link>
               <Link
@@ -86,7 +85,7 @@ const Hero = () => {
                   whileTap={{ scale: 0.95 }}
                   className="bg-transparent border-2 border-accentBlue text-accentBlue px-6 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold hover:bg-accentBlue/10 transition-colors w-full sm:w-auto hover:animate-pulse-glow"
                 >
-                  İletişim
+                  {t('hero.contact_btn')}
                 </motion.button>
               </Link>
               <motion.button
@@ -96,7 +95,7 @@ const Hero = () => {
                 className="bg-transparent border-2 border-accentBlue text-accentBlue px-6 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold hover:bg-accentBlue/10 transition-colors w-full sm:w-auto flex items-center justify-center gap-2 hover:animate-pulse-glow"
               >
                 <FaFileDownload className="text-lg sm:text-xl" />
-                CV İndir
+                {t('hero.cv_btn')}
               </motion.button>
             </div>
           </motion.div>

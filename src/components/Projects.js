@@ -30,6 +30,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { data } from "autoprefixer";
 import Aos from "aos";
+import { useTranslation } from 'react-i18next';
 
 const Projects = () => {
   const ref = useRef(null);
@@ -37,6 +38,8 @@ const Projects = () => {
   const [hasAnimated, setHasAnimated] = useState(false);
   const [activeTab, setActiveTab] = useState("projects");
   const [currentImageIndex, setCurrentImageIndex] = useState({});
+
+  const { t, i18n } = useTranslation();
 
   const slideVariants = {
     enter: (direction) => ({
@@ -208,10 +211,10 @@ const Projects = () => {
           data-aos-duration="800"
         >
           <h2 className="text-4xl font-bold text-lightGray mb-4">
-            Projelerim ve yeteneklerim
+            {t('projects_title')}
           </h2>
           <p className="text-lightGray/80 max-w-2xl mx-auto">
-            Geliştirdiğim projeler ve kullanabildiğim teknolojiler
+            {t('projects_desc')}
           </p>
         </div>
 
@@ -230,7 +233,7 @@ const Projects = () => {
                 : "bg-gray-800 text-gray-400 hover:bg-gray-700"
             }`}
           >
-            Projelerim
+            {t('projects_tab')}
           </button>
           <button
             onClick={() => setActiveTab("technologies")}
@@ -240,7 +243,7 @@ const Projects = () => {
                 : "bg-gray-800 text-gray-400 hover:bg-gray-700"
             }`}
           >
-            Teknolojiler
+            {t('technologies_tab')}
           </button>
           <button
             onClick={() => setActiveTab("certificates")}
@@ -250,7 +253,7 @@ const Projects = () => {
                 : "bg-gray-800 text-gray-400 hover:bg-gray-700"
             }`}
           >
-            Sertifikalarım
+            {t('certificates_tab')}
           </button>
         </div>
 
@@ -410,7 +413,7 @@ const Projects = () => {
                     className="inline-flex items-center space-x-2 text-accentBlue hover:text-accentBlue/80 transition-colors text-sm sm:text-base"
                   >
                     <FaCertificate className="text-lg sm:text-xl" />
-                    <span>Sertifikayı Görüntüle</span>
+                    <span>{t('certificate_view')}</span>
                   </a>
                 </div>
               </div>

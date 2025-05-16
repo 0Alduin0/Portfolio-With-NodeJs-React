@@ -8,8 +8,10 @@ import Lottie from "lottie-react";
 import animation3 from "../assets/animation3.json";
 import animation4 from "../assets/animation4.json";
 import animation5 from "../assets/animation5.json";
+import { useTranslation } from 'react-i18next';
 
 const Skills = () => {
+  const { t } = useTranslation();
   const ref = useRef(null);
   const isInView = useInView(ref, { threshold: 0.1 });
   const [hasAnimated, setHasAnimated] = useState(false);
@@ -26,23 +28,20 @@ const Skills = () => {
 
   const capabilities = [
     {
-      title: "Unity Oyun Geliştirme",
-      description:
-        "Unity oyun motoru ile hem mobil hem masaüstü platformlarda 2D ve 3D oyun geliştirebilir, Photon ve netcode yapılarını kullanark çok oyunculu oyunlar yazabilirim",
+      title: t('skills.cap1.title'),
+      description: t('skills.cap1.desc'),
       icon: <FaUnity className="text-4xl text-blue-500" />,
       animation: animation3,
     },
     {
-      title: "Backend Geliştirme",
-      description:
-        "Node.js ve Express.js ile RESTful API'ler oluşturabilir MongoDb de veri modelleyebilir JWT ile kullanıcı doğrulayabilir ve middleware yapıları kurabilirim.",
+      title: t('skills.cap2.title'),
+      description: t('skills.cap2.desc'),
       icon: <FaNodeJs className="text-4xl text-green-500" />,
       animation: animation4,
     },
     {
-      title: "Frontend Geliştirme",
-      description:
-        "React, Vite ve Tailwind CSS ile hızlı, modern ve mobil uyumlu arayüzler geliştiriyorum. UI/UX tasarıma önem veriyor, hızlı, responsive ve performans odaklı frontend projeler geliştirebilirim",
+      title: t('skills.cap3.title'),
+      description: t('skills.cap3.desc'),
       icon: <FaReact className="text-4xl text-blue-600" />,
       animation: animation5,
     },
@@ -53,7 +52,7 @@ const Skills = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16" data-aos="fade-up">
           <h2 className="text-4xl font-bold text-lightGray mb-4">
-            Uzmanlık alanlarım
+            {t('skills.title')}
           </h2>
         </div>
 

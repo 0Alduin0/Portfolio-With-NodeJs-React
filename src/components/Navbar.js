@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-scroll";
+import { useTranslation } from 'react-i18next';
 
 const Navbar = () => {
+  const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -24,11 +26,11 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { title: "Ana Sayfa", to: "home" },
-    { title: "Hakkımda", to: "about" },
-    { title: "Yetenekler", to: "skills" },
-    { title: "Projeler", to: "projects" },
-    { title: "İletişim", to: "contact" },
+    { title: t('navbar.home'), to: "home" },
+    { title: t('navbar.about'), to: "about" },
+    { title: t('navbar.skills'), to: "skills" },
+    { title: t('navbar.projects'), to: "projects" },
+    { title: t('navbar.contact'), to: "contact" },
   ];
 
   const handleMenuClick = (to) => {
@@ -92,6 +94,12 @@ const Navbar = () => {
               <FaBars className="text-2xl" />
             </motion.button>
           )}
+        </div>
+
+        {/* Language Switcher - Desktop */}
+        <div className="hidden md:flex items-center gap-2 ml-4">
+          <button onClick={() => i18n.changeLanguage('tr')} className="px-2 py-1 rounded bg-blue-600 text-white text-xs">TR</button>
+          <button onClick={() => i18n.changeLanguage('en')} className="px-2 py-1 rounded bg-gray-800 text-white text-xs">EN</button>
         </div>
 
         {/* Mobile Menu */}

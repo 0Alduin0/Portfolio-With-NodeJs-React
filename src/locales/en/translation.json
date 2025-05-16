@@ -1,0 +1,79 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "role1": "Unity Developer",
+    "role2": "Full Stack Developer",
+    "projects_btn": "My Projects",
+    "contact_btn": "Contact",
+    "cv_btn": "Download CV"
+  },
+  "about": {
+    "title": "About Me",
+    "desc": "I am a computer engineering student at Balıkesir University. I am a passionate game developer and an open-minded software developer for new technologies. I develop 2D and 3D games for both mobile and desktop platforms using Unity game engine and C# programming language. I am also on my way to becoming a fullstack developer by using various modern technologies.",
+    "skill1": {
+      "title": "Game Development",
+      "desc": "I have experience in developing 2D and 3D games with Unity. I am improving myself in game mechanics, level design, and optimization."
+    },
+    "skill2": {
+      "title": "Full Stack Development",
+      "desc": "I am knowledgeable in developing fullstack applications with React, Node.js, and modern web technologies."
+    },
+    "skill3": {
+      "title": "Creative Solutions",
+      "desc": "I love producing creative and innovative solutions to complex problems. I aim to provide the best user experience in every project."
+    }
+  },
+  "skills": {
+    "title": "My Expertise",
+    "cap1": {
+      "title": "Unity Game Development",
+      "desc": "I can develop 2D and 3D games for both mobile and desktop platforms with Unity game engine, and write multiplayer games using Photon and netcode structures."
+    },
+    "cap2": {
+      "title": "Backend Development",
+      "desc": "I can create RESTful APIs with Node.js and Express.js, model data in MongoDb, verify users with JWT, and set up middleware structures."
+    },
+    "cap3": {
+      "title": "Frontend Development",
+      "desc": "I develop fast, modern, and mobile-friendly interfaces with React, Vite, and Tailwind CSS. I care about UI/UX design and can develop fast, responsive, and performance-oriented frontend projects."
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "desc": "You can contact me using the form below or reach me via my contact information.",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "social": "Social Media",
+    "form_title": "Please fill out the form to contact me",
+    "name": "Name",
+    "name_placeholder": "Enter your name",
+    "email_placeholder": "Enter your email address",
+    "message": "Message",
+    "message_placeholder": "Enter your message",
+    "sending": "Sending...",
+    "send": "Send",
+    "success": "Your message has been sent successfully!",
+    "error": "An error occurred. Please try again."
+  },
+  "footer": {
+    "copyright": "© 2024 Enes Yürekli. All rights reserved."
+  },
+  "welcome": {
+    "name": "Enes Yürekli",
+    "role": "Software Developer",
+    "website": "www.enesyurekli.com"
+  },
+  "projects_tab": "My Projects",
+  "technologies_tab": "Technologies",
+  "certificates_tab": "My Certificates",
+  "projects_title": "My Projects and Skills",
+  "projects_desc": "Projects I have developed and technologies I can use",
+  "certificate_view": "View Certificate"
+}

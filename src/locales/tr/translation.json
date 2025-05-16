@@ -1,0 +1,79 @@
+{
+  "navbar": {
+    "home": "Ana Sayfa",
+    "about": "Hakkımda",
+    "skills": "Yetenekler",
+    "projects": "Projeler",
+    "contact": "İletişim"
+  },
+  "hero": {
+    "role1": "Unity Developer",
+    "role2": "Full Stack Developer",
+    "projects_btn": "Projelerim",
+    "contact_btn": "İletişim",
+    "cv_btn": "CV İndir"
+  },
+  "about": {
+    "title": "Hakkımda",
+    "desc": "Balıkesir üniversitesi bilgisayar mühendisliği öğrencisiyim. Tutkulu bir oyun geliştiricisi ve yeni teknolojilere açık bir yazılımcıyım. Unity oyun motoru ve C# programlama dili ile hem mobil hem masaüstü platformlarda 2D ve 3D oyunlar geliştirmekteyim. Ayrıca çeşitli modern teknolojileri kullanarak fullstack geliştirici olma yolunda yürümekteyim.",
+    "skill1": {
+      "title": "Oyun Geliştirme",
+      "desc": "Unity ile 2D ve 3D oyun geliştirme konusunda deneyimliyim. Oyun mekanikleri, level tasarımı ve optimizasyon konularında kendimi geliştirmekteyim."
+    },
+    "skill2": {
+      "title": "Full Stack Geliştirme",
+      "desc": "React, Node.js ve modern web teknolojileri ile fullstack uygulama geliştirme konusunda bilgiliyim."
+    },
+    "skill3": {
+      "title": "Yaratıcı Çözümler",
+      "desc": "Karmaşık problemlere yaratıcı ve yenilikçi çözümler üretmeyi seviyorum. Her projede en iyi kullanıcı deneyimini sunmayı hedefliyorum."
+    }
+  },
+  "skills": {
+    "title": "Uzmanlık alanlarım",
+    "cap1": {
+      "title": "Unity Oyun Geliştirme",
+      "desc": "Unity oyun motoru ile hem mobil hem masaüstü platformlarda 2D ve 3D oyun geliştirebilir, Photon ve netcode yapıları kullanarak çok oyunculu oyunlar yazabilirim."
+    },
+    "cap2": {
+      "title": "Backend Geliştirme",
+      "desc": "Node.js ve Express.js ile RESTful API'ler oluşturabilir, MongoDb'de veri modelleyebilir, JWT ile kullanıcı doğrulayabilir ve middleware yapıları kurabilirim."
+    },
+    "cap3": {
+      "title": "Frontend Geliştirme",
+      "desc": "React, Vite ve Tailwind CSS ile hızlı, modern ve mobil uyumlu arayüzler geliştiriyorum. UI/UX tasarıma önem veriyor, hızlı, responsive ve performans odaklı frontend projeler geliştirebilirim."
+    }
+  },
+  "contact": {
+    "title": "İletişim",
+    "desc": "Benimle iletişime geçmek için aşağıdaki formu kullanabilir veya iletişim bilgilerimden bana ulaşabilirsiniz.",
+    "email": "Email",
+    "phone": "Telefon",
+    "location": "Konum",
+    "social": "Sosyal Medya",
+    "form_title": "Benimle iletişime geçmek için lütfen formu doldurun",
+    "name": "İsim",
+    "name_placeholder": "İsminizi girin",
+    "email_placeholder": "Email adresinizi girin",
+    "message": "Mesaj",
+    "message_placeholder": "Mesajınızı girin",
+    "sending": "Gönderiliyor...",
+    "send": "Gönder",
+    "success": "Mesajınız başarıyla gönderildi!",
+    "error": "Bir hata oluştu. Lütfen tekrar deneyin."
+  },
+  "footer": {
+    "copyright": "© 2024 Enes Yürekli. Tüm hakları saklıdır."
+  },
+  "welcome": {
+    "name": "Enes Yürekli",
+    "role": "Software Developer",
+    "website": "www.enesyurekli.com"
+  },
+  "projects_tab": "Projelerim",
+  "technologies_tab": "Teknolojiler",
+  "certificates_tab": "Sertifikalarım",
+  "projects_title": "Projelerim ve yeteneklerim",
+  "projects_desc": "Geliştirdiğim projeler ve kullanabildiğim teknolojiler",
+  "certificate_view": "Sertifikayı Görüntüle"
+}
