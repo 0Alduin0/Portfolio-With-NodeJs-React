@@ -26,6 +26,10 @@ import {
   SiGit,
   SiGithub,
 } from "react-icons/si";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { data } from "autoprefixer";
+import Aos from "aos";
 
 const Projects = () => {
   const ref = useRef(null);
@@ -52,6 +56,10 @@ const Projects = () => {
   };
 
   const [[page, direction], setPage] = useState([0, 0]);
+
+  useEffect(() => {
+    AOS.init({ duration: 800, once: false });
+  }, []);
 
   useEffect(() => {
     if (isInView && !hasAnimated) {
@@ -194,12 +202,10 @@ const Projects = () => {
   return (
     <section id="projects" className="py-20">
       <div className="container mx-auto px-4">
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 20 }}
-          animate={hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.5 }}
+        <div
           className="text-center mb-16"
+          data-aos="fade-up"
+          data-aos-duration="800"
         >
           <h2 className="text-4xl font-bold text-lightGray mb-4">
             Projelerim ve yeteneklerim
@@ -207,10 +213,15 @@ const Projects = () => {
           <p className="text-lightGray/80 max-w-2xl mx-auto">
             Geliştirdiğim projeler ve kullanabildiğim teknolojiler
           </p>
-        </motion.div>
+        </div>
 
         {/* Tab Buttons */}
-        <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-12">
+        <div
+          className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-12"
+          data-aos="fade-up"
+          data-aos-delay="100"
+          data-aos-duration="800"
+        >
           <button
             onClick={() => setActiveTab("projects")}
             className={`px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold transition-colors text-sm sm:text-base whitespace-nowrap ${
@@ -247,13 +258,10 @@ const Projects = () => {
         {activeTab === "projects" && (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {projects.map((project, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={
-                  hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
-                }
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
                 className="bg-cardBg/50 p-3 sm:p-4 md:p-6 rounded-lg text-center border border-cardBorder/50 hover:border-borderAccent/70 transition-all duration-300 animate-float-3d hover:animate-scale-up"
               >
                 <div className="relative h-40 sm:h-48 md:h-56 lg:h-64 group overflow-hidden">
@@ -342,7 +350,7 @@ const Projects = () => {
                     </a>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         )}
@@ -351,13 +359,10 @@ const Projects = () => {
         {activeTab === "technologies" && (
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
             {technologies.map((tech, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={
-                  hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
-                }
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
                 className="bg-cardBg/50 p-3 sm:p-4 md:p-6 rounded-lg text-center border border-cardBorder/50 hover:border-borderAccent/70 transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up"
               >
                 <div className="flex justify-center mb-2 sm:mb-3 md:mb-4">
@@ -366,7 +371,7 @@ const Projects = () => {
                 <h4 className="text-lightGray font-semibold text-xs sm:text-sm md:text-base">
                   {tech.name}
                 </h4>
-              </motion.div>
+              </div>
             ))}
           </div>
         )}
@@ -375,13 +380,10 @@ const Projects = () => {
         {activeTab === "certificates" && (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {certificates.map((certificate, index) => (
-              <motion.div
+              <div
                 key={certificate.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={
-                  hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
-                }
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                data-aos="fade-up"
+                data-aos-delay={index * 1000}
                 className="bg-cardBg/50 p-3 sm:p-4 md:p-6 rounded-lg text-center border border-cardBorder/50 hover:border-borderAccent/70 transition-all duration-300 animate-float-3d hover:animate-scale-up"
               >
                 <div className="relative h-40 sm:h-48 md:h-56 lg:h-64 mb-3 sm:mb-4">
@@ -411,7 +413,7 @@ const Projects = () => {
                     <span>Sertifikayı Görüntüle</span>
                   </a>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         )}

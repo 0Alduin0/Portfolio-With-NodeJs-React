@@ -11,6 +11,8 @@ import {
 import { FaSquareXTwitter ,FaFacebook } from "react-icons/fa6";
 
 import emailjs from "@emailjs/browser";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Contact = () => {
   const formRef = useRef(null);
@@ -26,6 +28,10 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
+
+  useEffect(() => {
+    AOS.init({ duration: 800, once: false });
+  }, []);
 
   useEffect(() => {
     if (isInView && !hasAnimated) {
@@ -119,31 +125,18 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-20 relative overflow-hidden">
-        <motion.div
-          ref={formRef}
-          initial={{ opacity: 0, y: 20 }}
-          animate={hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
-        >
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-16" data-aos="fade-up">
           <h2 className="text-4xl font-bold text-lightGray mb-4">İletişim</h2>
           <p className="text-lightGray/80 max-w-2xl mx-auto">
             Benimle iletişime geçmek için aşağıdaki formu kullanabilir veya
             iletişim bilgilerimden bana ulaşabilirsiniz.
           </p>
-        </motion.div>
-
+        </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* İletişim Bilgileri ve Sosyal Medya */}
           <div className="space-y-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={
-                hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
-              }
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="bg-cardBg p-6 rounded-lg border border-cardBorder hover:border-borderAccent transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up"
-            >
+            <div data-aos="fade-right" className="bg-cardBg p-6 rounded-lg border border-cardBorder hover:border-borderAccent transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up">
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">
                   <FaEnvelope className="text-3xl text-accentBlue" />
@@ -184,17 +177,10 @@ const Contact = () => {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
 
             {/* Sosyal Medya */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={
-                hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
-              }
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="bg-cardBg p-6 rounded-lg border border-cardBorder hover:border-borderAccent transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up"
-            >
+            <div data-aos="fade-right" data-aos-delay="200" className="bg-cardBg p-6 rounded-lg border border-cardBorder hover:border-borderAccent transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up">
               <h3 className="text-lightGray font-semibold text-xl mb-6">
                 Sosyal Medya
               </h3>
@@ -212,16 +198,11 @@ const Contact = () => {
                   </a>
                 ))}
               </div>
-            </motion.div>
+            </div>
           </div>
 
           {/* İletişim Formu */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="bg-cardBg p-6 rounded-lg border border-cardBorder hover:border-borderAccent transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up"
-          >
+          <div data-aos="fade-left" className="bg-cardBg p-6 rounded-lg border border-cardBorder hover:border-borderAccent transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up">
             <h3 className="text-lightGray font-semibold text-xl mb-6">
               Benimle iletişime geçmek için lütfen formu doldurun
             </h3>
@@ -291,8 +272,9 @@ const Contact = () => {
                 </p>
               )}
             </form>
-          </motion.div>
+          </div>
         </div>
+      </div>
     </section>
   );
 };

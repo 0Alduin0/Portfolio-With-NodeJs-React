@@ -1,4 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { FaReact, FaNodeJs, FaUnity } from "react-icons/fa";
@@ -17,6 +19,10 @@ const Skills = () => {
       setHasAnimated(true);
     }
   }, [isInView, hasAnimated]);
+
+  useEffect(() => {
+    AOS.init({ duration: 800, once: false });
+  }, []);
 
   const capabilities = [
     {
@@ -45,28 +51,19 @@ const Skills = () => {
   return (
     <section id="skills" className="py-20">
       <div className="container mx-auto px-4">
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 20 }}
-          animate={hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16" data-aos="fade-up">
           <h2 className="text-4xl font-bold text-lightGray mb-4">
             Uzmanlık alanlarım
           </h2>
-        </motion.div>
+        </div>
 
         {/* Neler Yapabilirim */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {capabilities.map((capability, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={
-                hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
-              }
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
               className="bg-cardBg/50 p-4 sm:p-6 rounded-lg border border-cardBorder/50 hover:border-borderAccent/70 transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up"
             >
               <div className="flex items-center mb-3 sm:mb-4">
@@ -85,7 +82,7 @@ const Skills = () => {
                   className="w-full h-full"
                 />
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

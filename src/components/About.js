@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
@@ -15,10 +17,14 @@ const About = () => {
   });
 
   useEffect(() => {
+    AOS.init({ duration: 800, once: false });
+  }, []);
+
+  useEffect(() => {
     if (isInView && !hasAnimated) {
       setHasAnimated(true);
     }
-  }, [isInView,hasAnimated]);
+  }, [isInView, hasAnimated]);
 
   const skills = [
     {
@@ -46,18 +52,19 @@ const About = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           {/* Sol taraf - Metin içeriği */}
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 1, y: 20 }}
-            animate={hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            className="flex-1"
-          >
+          <div data-aos="fade-right" className="flex-1">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-lightGray mb-4">
+              <h2
+                className="text-4xl font-bold text-lightGray mb-4"
+                data-aos="fade-up-left"
+              >
                 Hakkımda
               </h2>
-              <p className="text-lightGray/80 max-w-2xl mx-auto">
+              <p
+                className="text-lightGray/80 max-w-2xl mx-auto"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
                 Balıkesir üniversitesi bilgisayar mühendisliği öğrencisiyim.
                 Tutkulu bir oyun geliştiricisi ve yeni teknolojilere açık bir
                 yazılımcıyım. Unity oyun motoru ve C# programlama dili ile hem
@@ -69,17 +76,10 @@ const About = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {skills.map((skill, index) => (
-                <motion.div
+                <div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={
-                    hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
-                  }
-                  transition={{
-                    duration: 0.5,
-                    delay: index * 0.1,
-                    ease: "easeOut",
-                  }}
+                  data-aos="fade-left"
+                  data-aos-delay={index * 100}
                   className="bg-cardBg p-6 rounded-lg border border-cardBorder hover:border-borderAccent transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up hover:animate-border-glow"
                 >
                   <div className="text-accentBlue mb-4">{skill.icon}</div>
@@ -87,24 +87,19 @@ const About = () => {
                     {skill.title}
                   </h3>
                   <p className="text-lightGray/80">{skill.description}</p>
-                </motion.div>
+                </div>
               ))}
             </div>
-          </motion.div>
+          </div>
 
           {/* Sağ taraf - Lottie Animasyonu */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={hasAnimated ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex-1 w-full max-w-md"
-          >
+          <div data-aos="fade-left" className="flex-1 w-full max-w-md">
             <Lottie
               animationData={animationData}
               loop={true}
               className="w-full h-full max-h-[400px]"
             />
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

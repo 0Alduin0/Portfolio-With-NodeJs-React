@@ -4,6 +4,12 @@ import { FaGamepad, FaFileDownload } from "react-icons/fa";
 import Lottie from "lottie-react";
 import animationData from "../assets/animation.json";
 import { Link } from "react-scroll";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+
+
+
 
 const Hero = () => {
   const roles = ["Unity Developer", "Full Stack Developer"];
@@ -34,7 +40,7 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
             className="flex-1 text-center lg:text-left"
           >
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-4 sm:mb-6">
+            <h1  className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-4 sm:mb-6">
               Enes Yürekli
             </h1>
             <div className="h-12 sm:h-16 mb-6 sm:mb-8">
@@ -112,6 +118,7 @@ const Hero = () => {
         </div>
       </div>
     </section>
+    
   );
 };
 
