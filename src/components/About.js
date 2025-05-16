@@ -18,7 +18,7 @@ const About = () => {
     if (isInView && !hasAnimated) {
       setHasAnimated(true);
     }
-  }, [isInView, hasAnimated]);
+  }, [isInView,hasAnimated]);
 
   const skills = [
     {

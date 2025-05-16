@@ -14,13 +14,15 @@ import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const formRef = useRef(null);
-  const isInView = useInView(formRef, { threshold: 1 });
+  const isInView = useInView(formRef, { threshold: 0.1 });
   const [hasAnimated, setHasAnimated] = useState(false);
   const [form, setForm] = useState({
     name: "",
     email: "",
     message: "",
   });
+
+  
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
@@ -117,7 +119,6 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-20 relative overflow-hidden">
-      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           ref={formRef}
           initial={{ opacity: 0, y: 20 }}
@@ -224,7 +225,8 @@ const Contact = () => {
             <h3 className="text-lightGray font-semibold text-xl mb-6">
               Benimle iletişime geçmek için lütfen formu doldurun
             </h3>
-            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+            <form ref={formRef}
+             onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-lightGray mb-2">
                   İsim
@@ -292,7 +294,6 @@ const Contact = () => {
             </form>
           </motion.div>
         </div>
-      </div>
     </section>
   );
 };
