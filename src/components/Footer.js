@@ -11,18 +11,19 @@ const Footer = () => {
           </div>
           <div className="flex space-x-6">
             <a
-              href="https://github.com/0Alduin0"
+              href="https://d2fnysaq0ytmgw.cloudfront.net/public/content/media/image/page-under-construction.jpg?VersionId=MK1bzfxBR4nMMRShIV8_4rIsbsdxRs68"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lightGray hover:text-accentBlue transition-colors"
+              className="relative z-1 text-lightGray hover:text-accentBlue transition-colors"
+              
             >
               <FaGithub className="text-2xl" />
             </a>
             <a
-              href="https://www.linkedin.com/in/enes-yurekli-0b0b0b0b0/"
+              href="https://d2fnysaq0ytmgw.cloudfront.net/public/content/media/image/page-under-construction.jpg?VersionId=MK1bzfxBR4nMMRShIV8_4rIsbsdxRs68"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lightGray hover:text-accentBlue transition-colors"
+              className="relative z-1 text-lightGray hover:text-accentBlue transition-colors"
             >
               <FaLinkedin className="text-2xl" />
             </a>
