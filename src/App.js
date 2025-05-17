@@ -10,7 +10,6 @@ import WelcomeScreen from "./components/WelcomeScreen";
 import { AnimatePresence } from 'framer-motion';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from 'react';
-import { SpeedInsights } from '@vercel/speed-insights/react';
 
 import Particles from "./components/Particles";
 
@@ -63,7 +62,6 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage showWelcome={showWelcome} setShowWelcome={setShowWelcome} />} />
       </Routes>
-      <SpeedInsights />
     </BrowserRouter>
   );
 }
