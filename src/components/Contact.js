@@ -106,7 +106,7 @@ const Contact = () => {
     {
       icon: <FaLinkedin className="text-3xl" />,
       title: "LinkedIn",
-      link: "https://www.linkedin.com/in/enes-yurekli-1483b2332/",
+      link: "https://www.linkedin.com/in/enes-yürekli-1483b2332/",
     },
     {
       icon: <FaSquareXTwitter className="text-3xl" />,
