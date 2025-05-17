@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@vercel/speed-insights": "^1.2.0",
     "aos": "^2.3.4",
     "framer-motion": "^10.16.4",
     "lottie-react": "^2.4.1",
