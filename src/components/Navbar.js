@@ -67,7 +67,7 @@ const Navbar = () => {
                 to={link.to}
                 spy={true}
                 smooth={true}
-                offset={-70}
+                offset={-10}
                 duration={800}
                 className="text-lightGray hover:text-accentBlue transition-colors cursor-pointer"
               >

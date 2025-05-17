@@ -121,7 +121,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 relative overflow-hidden">
+    <section data-aos="fade-left" id="contact" className="py-20 relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16" data-aos="fade-up">
           <h2 className="text-4xl font-bold text-lightGray mb-4">İletişim</h2>
@@ -133,7 +133,7 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* İletişim Bilgileri ve Sosyal Medya */}
           <div className="space-y-8">
-            <div data-aos="fade-right" className="bg-cardBg p-6 rounded-lg border border-cardBorder hover:border-borderAccent transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up">
+            <div  className="bg-cardBg p-6 rounded-lg border border-cardBorder hover:border-borderAccent transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up">
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">
                   <FaEnvelope className="text-3xl text-accentBlue" />
@@ -177,7 +177,7 @@ const Contact = () => {
             </div>
 
             {/* Sosyal Medya */}
-            <div data-aos="fade-right" data-aos-delay="200" className="bg-cardBg p-6 rounded-lg border border-cardBorder hover:border-borderAccent transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up">
+            <div className="bg-cardBg p-6 rounded-lg border border-cardBorder hover:border-borderAccent transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up">
               <h3 className="text-lightGray font-semibold text-xl mb-6">
                 Sosyal Medya
               </h3>
@@ -199,7 +199,7 @@ const Contact = () => {
           </div>
 
           {/* İletişim Formu */}
-          <div data-aos="fade-left" className="bg-cardBg p-6 rounded-lg border border-cardBorder hover:border-borderAccent transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up">
+          <div  className="bg-cardBg p-6 rounded-lg border border-cardBorder hover:border-borderAccent transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up">
             <h3 className="text-lightGray font-semibold text-xl mb-6">
               Benimle iletişime geçmek için lütfen formu doldurun
             </h3>

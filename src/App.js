@@ -39,7 +39,11 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
   /></div>
             <Hero />
             <Navbar />
+            
             <main className="relative z-10">
+              <div style={{ height: '600px', position: 'relative' }}>
+  
+      </div>
             <About />
             <Skills />
             <Projects />
