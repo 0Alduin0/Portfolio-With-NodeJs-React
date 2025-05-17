@@ -1,15 +1,13 @@
 import React from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { useTranslation } from "react-i18next";
 
 const Footer = () => {
-  const { t } = useTranslation();
   return (
     <footer className="bg-darkBlue/30 py-8">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="text-lightGray mb-4 md:mb-0">
-            <p>{t("footer.copyright")}</p>
+            <p>© 2024 Enes Yürekli. Tüm hakları saklıdır.</p>
           </div>
           <div className="flex space-x-6">
             <a

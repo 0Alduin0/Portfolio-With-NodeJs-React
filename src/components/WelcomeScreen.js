@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Code2, Github, Globe, User } from 'lucide-react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { useTranslation } from 'react-i18next';
 
 const TypewriterEffect = ({ text }) => {
   const [displayText, setDisplayText] = useState('');
@@ -47,7 +46,6 @@ const IconButton = ({ Icon }) => (
 );
 
 const WelcomeScreen = ({ onLoadingComplete }) => {
-  const { t } = useTranslation();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -81,17 +79,6 @@ const WelcomeScreen = ({ onLoadingComplete }) => {
     }
   };
 
-  const childVariants = {
-    exit: {
-      y: -20,
-      opacity: 0,
-      transition: {
-        duration: 0.4,
-        ease: "easeInOut"
-      }
-    }
-  };
-
   return (
     <AnimatePresence>
       {isLoading && (
@@ -103,13 +90,12 @@ const WelcomeScreen = ({ onLoadingComplete }) => {
           variants={containerVariants}
         >
           <BackgroundEffect />
-          
           <div className="relative min-h-screen flex items-center justify-center px-4">
             <div className="w-full max-w-4xl mx-auto">
               {/* Icons */}
               <motion.div 
                 className="flex justify-center gap-3 sm:gap-4 md:gap-8 mb-6 sm:mb-8 md:mb-12"
-                variants={childVariants}
+                variants={containerVariants}
               >
                 {[Code2, User, Github].map((Icon, index) => (
                   <div key={index} data-aos="fade-down" data-aos-delay={index * 200}>
@@ -120,17 +106,17 @@ const WelcomeScreen = ({ onLoadingComplete }) => {
               {/* Welcome Text */}
               <motion.div 
                 className="text-center mb-6 sm:mb-8 md:mb-12"
-                variants={childVariants}
+                variants={containerVariants}
               >
                 <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold space-y-2 sm:space-y-4">
                   <div className="mb-2 sm:mb-4">
                     <span data-aos="fade-right" data-aos-delay="200" className="inline-block px-2 bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
-                      {t('welcome.name')}
+                      Enes Yürekli
                     </span>{' '}
                   </div>
                   <div>
                     <span data-aos="fade-up" data-aos-delay="800" className="inline-block px-2 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                      {t('welcome.role')}
+                      Software Developer
                     </span>{' '}
                   </div>
                 </h1>
@@ -139,7 +125,7 @@ const WelcomeScreen = ({ onLoadingComplete }) => {
               {/* Website Link */}
               <motion.div 
                 className="text-center"
-                variants={childVariants}
+                variants={containerVariants}
                 data-aos="fade-up"
                 data-aos-delay="1200"
               >
@@ -153,7 +139,7 @@ const WelcomeScreen = ({ onLoadingComplete }) => {
                   <div className="relative flex items-center gap-2 text-lg sm:text-xl md:text-2xl">
                     <Globe className="w-4 h-4 sm:w-5 sm:h-5 text-indigo-600" />
                     <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                      <TypewriterEffect text={t('welcome.website')}/>
+                      <TypewriterEffect text="www.enesyurekli.com"/>
                     </span>
                   </div>
                 </a>

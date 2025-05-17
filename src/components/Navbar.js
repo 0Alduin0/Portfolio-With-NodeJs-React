@@ -2,10 +2,8 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-scroll";
-import { useTranslation } from 'react-i18next';
 
 const Navbar = () => {
-  const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -26,11 +24,11 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { title: t('navbar.home'), to: "home" },
-    { title: t('navbar.about'), to: "about" },
-    { title: t('navbar.skills'), to: "skills" },
-    { title: t('navbar.projects'), to: "projects" },
-    { title: t('navbar.contact'), to: "contact" },
+    { title: "Ana Sayfa", to: "home" },
+    { title: "Hakkımda", to: "about" },
+    { title: "Yetenekler", to: "skills" },
+    { title: "Projeler", to: "projects" },
+    { title: "İletişim", to: "contact" },
   ];
 
   const handleMenuClick = (to) => {
@@ -62,7 +60,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-end items-center">
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8 items-center">
+          <div className="hidden md:flex space-x-8">
             {navLinks.map((link, index) => (
               <Link
                 key={index}
@@ -82,11 +80,6 @@ const Navbar = () => {
                 </motion.span>
               </Link>
             ))}
-            {/* Çeviri butonları iletişimin sağına */}
-            <div className="flex items-center gap-2 ml-2">
-              <button onClick={() => i18n.changeLanguage('tr')} className="px-2 py-1 rounded bg-blue-600 text-white text-xs">TR</button>
-              <button onClick={() => i18n.changeLanguage('en')} className="px-2 py-1 rounded bg-gray-800 text-white text-xs">EN</button>
-            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -135,11 +128,6 @@ const Navbar = () => {
                     {link.title}
                   </motion.a>
                 ))}
-              </div>
-              {/* Mobilde çeviri butonları en alta */}
-              <div className="flex justify-center gap-2 mb-6 mt-8">
-                <button onClick={() => i18n.changeLanguage('tr')} className="px-3 py-1 rounded bg-blue-600 text-white text-sm">TR</button>
-                <button onClick={() => i18n.changeLanguage('en')} className="px-3 py-1 rounded bg-gray-800 text-white text-sm">EN</button>
               </div>
             </motion.div>
           )}

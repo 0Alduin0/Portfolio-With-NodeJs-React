@@ -7,10 +7,8 @@ import { useRef } from "react";
 import { FaGamepad, FaCode, FaLightbulb } from "react-icons/fa";
 import Lottie from "lottie-react";
 import animationData from "../assets/animation2.json";
-import { useTranslation } from "react-i18next";
 
 const About = () => {
-  const { t } = useTranslation();
   const ref = useRef(null);
   const [hasAnimated, setHasAnimated] = useState(false);
   const isInView = useInView(ref, {
@@ -31,18 +29,21 @@ const About = () => {
   const skills = [
     {
       icon: <FaGamepad className="text-4xl" />,
-      title: t("about.skill1.title"),
-      description: t("about.skill1.desc"),
+      title: "Oyun Geliştirme",
+      description:
+        "Unity ile 2D ve 3D oyun geliştirme konusunda deneyimliyim. Oyun mekanikleri, level tasarımı ve optimizasyon konularında kendimi geliştirmekteyim.",
     },
     {
       icon: <FaCode className="text-4xl" />,
-      title: t("about.skill2.title"),
-      description: t("about.skill2.desc"),
+      title: "Full Stack Geliştirme",
+      description:
+        "React, Node.js ve modern web teknolojileri ile fullstack uygulama geliştirme konusunda bilgiliyim.",
     },
     {
       icon: <FaLightbulb className="text-4xl" />,
-      title: t("about.skill3.title"),
-      description: t("about.skill3.desc"),
+      title: "Yaratıcı Çözümler",
+      description:
+        "Karmaşık problemlere yaratıcı ve yenilikçi çözümler üretmeyi seviyorum. Her projede en iyi kullanıcı deneyimini sunmayı hedefliyorum.",
     },
   ];
 
@@ -57,14 +58,19 @@ const About = () => {
                 className="text-4xl font-bold text-lightGray mb-4"
                 data-aos="fade-up-left"
               >
-                {t("about.title")}
+                Hakkımda
               </h2>
               <p
                 className="text-lightGray/80 max-w-2xl mx-auto"
                 data-aos="fade-up"
                 data-aos-delay="100"
               >
-                {t("about.desc")}
+                Balıkesir üniversitesi bilgisayar mühendisliği öğrencisiyim.
+                Tutkulu bir oyun geliştiricisi ve yeni teknolojilere açık bir
+                yazılımcıyım. Unity oyun motoru ve C# programlama dili ile hem
+                mobil hem masaüstü platformlarda 2D ve 3D oyunlar geliştirmekteyim.
+                Ayrıca çeşitli modern teknolojileri kullanarak fullstack geliştirici
+                olma yolunda yürümekteyim.
               </p>
             </div>
 
