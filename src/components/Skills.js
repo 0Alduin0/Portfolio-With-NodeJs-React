@@ -1,7 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { FaReact, FaNodeJs, FaUnity } from "react-icons/fa";
 import Lottie from "lottie-react";

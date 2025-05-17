@@ -28,8 +28,6 @@ import {
 } from "react-icons/si";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { data } from "autoprefixer";
-import Aos from "aos";
 
 const Projects = () => {
   const ref = useRef(null);

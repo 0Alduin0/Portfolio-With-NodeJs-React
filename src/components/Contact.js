@@ -1,5 +1,4 @@
 import React, { useRef, useEffect, useState } from "react";
-import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import {
   FaEnvelope,

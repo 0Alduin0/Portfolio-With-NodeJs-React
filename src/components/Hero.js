@@ -4,9 +4,7 @@ import { FaGamepad, FaFileDownload } from "react-icons/fa";
 import Lottie from "lottie-react";
 import animationData from "../assets/animation.json";
 import { Link } from "react-scroll";
-import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
 
 const Hero = () => {
   const roles = ["Unity Developer", "Full Stack Developer"];
