@@ -1,8 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "framer-motion";
-
-
 import {
   FaGithub,
   FaExternalLinkAlt,
