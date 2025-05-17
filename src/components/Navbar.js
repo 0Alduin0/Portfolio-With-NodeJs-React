@@ -62,7 +62,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-end items-center">
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-8 items-center">
             {navLinks.map((link, index) => (
               <Link
                 key={index}
@@ -82,6 +82,11 @@ const Navbar = () => {
                 </motion.span>
               </Link>
             ))}
+            {/* Çeviri butonları iletişimin sağına */}
+            <div className="flex items-center gap-2 ml-2">
+              <button onClick={() => i18n.changeLanguage('tr')} className="px-2 py-1 rounded bg-blue-600 text-white text-xs">TR</button>
+              <button onClick={() => i18n.changeLanguage('en')} className="px-2 py-1 rounded bg-gray-800 text-white text-xs">EN</button>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -94,12 +99,6 @@ const Navbar = () => {
               <FaBars className="text-2xl" />
             </motion.button>
           )}
-        </div>
-
-        {/* Language Switcher - Desktop */}
-        <div className="hidden md:flex items-center gap-2 ml-4">
-          <button onClick={() => i18n.changeLanguage('tr')} className="px-2 py-1 rounded bg-blue-600 text-white text-xs">TR</button>
-          <button onClick={() => i18n.changeLanguage('en')} className="px-2 py-1 rounded bg-gray-800 text-white text-xs">EN</button>
         </div>
 
         {/* Mobile Menu */}
@@ -136,6 +135,11 @@ const Navbar = () => {
                     {link.title}
                   </motion.a>
                 ))}
+              </div>
+              {/* Mobilde çeviri butonları en alta */}
+              <div className="flex justify-center gap-2 mb-6 mt-8">
+                <button onClick={() => i18n.changeLanguage('tr')} className="px-3 py-1 rounded bg-blue-600 text-white text-sm">TR</button>
+                <button onClick={() => i18n.changeLanguage('en')} className="px-3 py-1 rounded bg-gray-800 text-white text-sm">EN</button>
               </div>
             </motion.div>
           )}
