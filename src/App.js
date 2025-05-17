@@ -11,6 +11,9 @@ import { AnimatePresence } from 'framer-motion';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from 'react';
 
+import Particles from "./components/Particles";
+
+
 const LandingPage = ({ showWelcome, setShowWelcome }) => {
   return (
     <>
@@ -24,6 +27,16 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
         <>
         <div className="min-h-screen bg-gradient-to-br from-darkPurple via-darkBlue to-accentBlue animate-gradient-xy overflow-x-hidden">
           <div className="relative">
+            <div style={{ width: '100%', height: '100%', position: 'absolute' }}><Particles
+    particleColors={['#ffffff', '#ffffff']}
+    particleCount={5000}
+    particleSpread={10}
+    speed={0.05}
+    particleBaseSize={100}
+    moveParticlesOnHover={false}
+    alphaParticles={false}
+    disableRotation={false}
+  /></div>
             <Hero />
             <Navbar />
             <main className="relative z-10">
@@ -33,11 +46,9 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
             <Contact />
           </main>
           <Footer />
-      </div>
-    </div>
-          
-          
-        </>
+          </div>
+        </div>
+      </>
       )}
     </>
   );
