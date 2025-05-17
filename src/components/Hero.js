@@ -104,7 +104,7 @@ const Hero = () => {
             whileHover={{ scale: 1.2, rotateZ: 10 }} // Hover efekti burada
             className="flex-1 w-full max-w-sm sm:max-w-md md:max-w-lg"
           >
-            <Lottie
+            <  Lottie
               animationData={animationData}
               loop={true}
               className="w-full h-full"
