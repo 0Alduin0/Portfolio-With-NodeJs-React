@@ -76,7 +76,7 @@ const Projects = () => {
         require("../assets/images/screenshots3.jpg"),
       ],
       github: "https://github.com/0Alduin0/FruitMerge-Game",
-      live: "https://project1.com",
+      live: "https://d2fnysaq0ytmgw.cloudfront.net/public/content/media/image/page-under-construction.jpg?VersionId=MK1bzfxBR4nMMRShIV8_4rIsbsdxRs68",
       technologies: ["Unity", "C#", "Singleplayer"],
     },
     {
@@ -90,7 +90,7 @@ const Projects = () => {
         require("../assets/images/screenshots7.jpg"),
       ],
       github: "https://github.com/0Alduin0/BlackJack-Game",
-      live: "https://project2.com",
+      live: "https://d2fnysaq0ytmgw.cloudfront.net/public/content/media/image/page-under-construction.jpg?VersionId=MK1bzfxBR4nMMRShIV8_4rIsbsdxRs68",
       technologies: ["Unity", "C#", "Singleplayer"],
     },
     {
@@ -104,7 +104,7 @@ const Projects = () => {
         require("../assets/images/screenshots11.jpg"),
       ],
       github: "https://github.com/0Alduin0/Shooter-Game",
-      live: "https://project3.com",
+      live: "https://d2fnysaq0ytmgw.cloudfront.net/public/content/media/image/page-under-construction.jpg?VersionId=MK1bzfxBR4nMMRShIV8_4rIsbsdxRs68",
       technologies: ["Unity", "C#", "PhotonNetwork", "Multiplayer"],
     },
   ];

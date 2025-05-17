@@ -27,7 +27,7 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
         <>
         <div className="min-h-screen bg-gradient-to-br from-darkPurple via-darkBlue to-accentBlue animate-gradient-xy overflow-x-hidden">
           <div className="relative">
-            <div style={{ width: '100%', height: '100%', position: 'absolute' }}><Particles
+            <div style={{ width: '100%', height: '100%', position: 'absolute',zIndex:0 }}><Particles
     particleColors={['#ffffff', '#ffffff']}
     particleCount={5000}
     particleSpread={10}
@@ -41,9 +41,7 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
             <Navbar />
             
             <main className="relative z-10">
-              <div style={{ height: '600px', position: 'relative' }}>
-  
-      </div>
+              
             <About />
             <Skills />
             <Projects />

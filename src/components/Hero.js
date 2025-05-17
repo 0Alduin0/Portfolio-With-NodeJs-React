@@ -63,7 +63,7 @@ const Hero = () => {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-accentBlue text-darkPurple px-6 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold hover:bg-lightBlue transition-colors flex items-center justify-center gap-2 w-full sm:w-auto hover:animate-pulse-glow"
+                  className="relative z-1 bg-accentBlue text-darkPurple px-6 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold hover:bg-lightBlue transition-colors flex items-center justify-center gap-2 w-full sm:w-auto hover:animate-pulse-glow"
                 >
                   <FaGamepad className="text-lg sm:text-xl" />
                   Projelerim
@@ -79,7 +79,7 @@ const Hero = () => {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-transparent border-2 border-accentBlue text-accentBlue px-6 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold hover:bg-accentBlue/10 transition-colors w-full sm:w-auto hover:animate-pulse-glow"
+                  className="relative z-1 bg-transparent border-2 border-accentBlue text-accentBlue px-6 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold hover:bg-accentBlue/10 transition-colors w-full sm:w-auto hover:animate-pulse-glow"
                 >
                   İletişim
                 </motion.button>
@@ -88,7 +88,7 @@ const Hero = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={handleDownloadCV}
-                className="bg-transparent border-2 border-accentBlue text-accentBlue px-6 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold hover:bg-accentBlue/10 transition-colors w-full sm:w-auto flex items-center justify-center gap-2 hover:animate-pulse-glow"
+                className="relative z-1 bg-transparent border-2 border-accentBlue text-accentBlue px-6 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold hover:bg-accentBlue/10 transition-colors w-full sm:w-auto flex items-center justify-center gap-2 hover:animate-pulse-glow"
               >
                 <FaFileDownload className="text-lg sm:text-xl" />
                 CV İndir
