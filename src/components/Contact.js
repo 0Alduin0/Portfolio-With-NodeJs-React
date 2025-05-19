@@ -124,11 +124,7 @@ const Contact = () => {
     <section data-aos="fade-left" id="contact" className="py-20 relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16" data-aos="fade-up">
-          <h2 className="text-4xl font-bold text-lightGray mb-4">İletişim</h2>
-          <p className="text-lightGray/80 max-w-2xl mx-auto">
-            Benimle iletişime geçmek için aşağıdaki formu kullanabilir veya
-            iletişim bilgilerimden bana ulaşabilirsiniz.
-          </p>
+          <h2 className="text-4xl font-bold text-lightGray mb-4">İletişime Geç</h2>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* İletişim Bilgileri ve Sosyal Medya */}
@@ -200,9 +196,6 @@ const Contact = () => {
 
           {/* İletişim Formu */}
           <div  className="bg-cardBg/50 p-6 rounded-lg border border-cardBorder hover:border-borderAccent transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up">
-            <h3 className="text-lightGray font-semibold text-xl mb-6">
-              Benimle iletişime geçmek için lütfen formu doldurun
-            </h3>
             <form  onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-lightGray mb-2">
