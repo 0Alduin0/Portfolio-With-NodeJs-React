@@ -40,6 +40,8 @@ const BackgroundEffect = () => (
 
 const WelcomeScreen = ({ onLoadingComplete }) => {
   const [isLoading, setIsLoading] = useState(true);
+  const timerRef = React.useRef(null);
+
 
   useEffect(() => {
     AOS.init({
@@ -57,6 +59,14 @@ const WelcomeScreen = ({ onLoadingComplete }) => {
     
     return () => clearTimeout(timer);
   }, [onLoadingComplete]);
+
+  const skipAnimation = () => {
+    clearTimeout(timerRef.current);
+    setIsLoading(false);
+    setTimeout(() => {
+      onLoadingComplete?.();
+    },1);
+  };
 
   const containerVariants = {
     exit: {
@@ -81,6 +91,7 @@ const WelcomeScreen = ({ onLoadingComplete }) => {
           animate={{ opacity: 1 }}
           exit="exit"
           variants={containerVariants}
+          onClick={skipAnimation}
         >
           <BackgroundEffect />
           <div className="relative min-h-screen flex items-center justify-center px-4">
