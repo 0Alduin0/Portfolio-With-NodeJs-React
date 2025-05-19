@@ -389,7 +389,7 @@ const Projects = () => {
               <div
                 key={certificate.id}
                 data-aos="fade-up"
-                data-aos-delay={index * 1000}
+                data-aos-delay={index * 500}
                 className="bg-cardBg/50 p-3 sm:p-4 md:p-6 rounded-lg text-center border border-cardBorder/50 hover:border-borderAccent/70 transition-all duration-300 animate-float-3d hover:animate-scale-up"
               >
                 <div className="relative h-40 sm:h-48 md:h-56 lg:h-64 mb-3 sm:mb-4">
