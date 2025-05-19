@@ -79,7 +79,7 @@ const About = () => {
                   key={index}
                   data-aos="fade-left"
                   data-aos-delay={index * 100}
-                  className="bg-cardBg p-6 rounded-lg border border-cardBorder hover:border-borderAccent transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up hover:animate-border-glow"
+                  className="bg-cardBg/50 p-6 rounded-lg border border-cardBorder hover:border-borderAccent transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up hover:animate-border-glow"
                 >
                   <div className="text-accentBlue mb-4">{skill.icon}</div>
                   <h3 className="text-lightGray font-semibold text-xl mb-2">

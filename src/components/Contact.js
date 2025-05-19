@@ -133,7 +133,7 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* İletişim Bilgileri ve Sosyal Medya */}
           <div className="space-y-8">
-            <div  className="bg-cardBg p-6 rounded-lg border border-cardBorder hover:border-borderAccent transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up">
+            <div  className="bg-cardBg/50 p-6 rounded-lg border border-cardBorder hover:border-borderAccent transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up">
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">
                   <FaEnvelope className="text-3xl text-accentBlue" />
@@ -177,7 +177,7 @@ const Contact = () => {
             </div>
 
             {/* Sosyal Medya */}
-            <div className="bg-cardBg p-6 rounded-lg border border-cardBorder hover:border-borderAccent transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up">
+            <div className="bg-cardBg/50 p-6 rounded-lg border border-cardBorder hover:border-borderAccent transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up">
               <h3 className="text-lightGray font-semibold text-xl mb-6">
                 Sosyal Medya
               </h3>
@@ -199,7 +199,7 @@ const Contact = () => {
           </div>
 
           {/* İletişim Formu */}
-          <div  className="bg-cardBg p-6 rounded-lg border border-cardBorder hover:border-borderAccent transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up">
+          <div  className="bg-cardBg/50 p-6 rounded-lg border border-cardBorder hover:border-borderAccent transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up">
             <h3 className="text-lightGray font-semibold text-xl mb-6">
               Benimle iletişime geçmek için lütfen formu doldurun
             </h3>
@@ -252,7 +252,7 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className={`w-full bg-accentBlue text-darkPurple hover:bg-accentBlue/90 transition-colors py-3 rounded-lg font-semibold ${
+                className={`w-full bg-accentBlue/50 text-darkPurple hover:bg-accentBlue/90 transition-colors py-3 rounded-lg font-semibold ${
                   loading ? "opacity-50 cursor-not-allowed" : ""
                 }`}
               >

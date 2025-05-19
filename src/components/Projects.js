@@ -158,6 +158,14 @@ const Projects = () => {
       image: require("../assets/images/unity-essentials-pathway.png"),
       link: "https://www.credly.com/badges/68c339d6-b0fc-4ea9-9955-e16cc21e3aae",
     },
+    {
+      id: 2,
+      title: "Unity C#, Firebase",
+      issuer: "A. Gökhan SATMAN",
+      date: "2024",
+      image: require("../assets/images/unity-essentials-pathway.png"),
+      link: "https://www.credly.com/badges/68c339d6-b0fc-4ea9-9955-e16cc21e3aae",
+    },
 
     // Diğer sertifikalarınızı buraya ekleyebilirsiniz
   ];
