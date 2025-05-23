@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "framer-motion";
 import {
   FaGithub,
-  FaExternalLinkAlt,
   FaChevronLeft,
   FaChevronRight,
   FaCertificate,
@@ -345,14 +344,6 @@ const Projects = () => {
                       className="text-lightGray/80 hover:text-lightGray transition-colors"
                     >
                       <FaGithub className="text-lg sm:text-xl md:text-2xl" />
-                    </a>
-                    <a
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-lightGray/80 hover:text-lightGray transition-colors"
-                    >
-                      <FaExternalLinkAlt className="text-lg sm:text-xl md:text-2xl" />
                     </a>
                   </div>
                 </div>
