@@ -27,21 +27,21 @@ const Skills = () => {
     {
       title: "Unity Oyun Geliştirme",
       description:
-        "Unity oyun motoru ile hem mobil hem masaüstü platformlarda 2D ve 3D oyun geliştirebilir, Photon ve netcode yapıları kullanark çok oyunculu oyunlar yazabilirim",
+        "Unity ile hem mobil hem masaüstü platformlar için 2D ve 3D oyunlar geliştirebiliyorum. Oyun içi mantık, sahne yönetimi, kullanıcı arayüzü (UI) gibi temel yapıları rahatlıkla kurabiliyorum. Photon Engine, Netcode for GameObjects ve Firebase Realtime Database gibi sistemleri kullanarak lobby, matchmaking, gerçek zamanlı veri paylaşımı gibi özellikleri entegre edebiliyorum. Unreal Engine 5 üzerinde de temel seviyede çalışmalar yaptım ve Blueprint sistemi ile basit mekanikler içeren 3D oyunlar geliştirebiliyorum.",
       icon: <FaUnity className="text-4xl text-blue-500" />,
       animation: animation3,
     },
     {
       title: "Backend Geliştirme",
       description:
-        "Node.js ve Express.js ile RESTful API'ler oluşturabilir MongoDb de veri modelleyebilir JWT ile kullanıcı doğrulayabilir ve middleware yapıları kurabilirim.",
+        "Node.js ve Express.js kullanarak RESTful API’ler geliştirebiliyor, MongoDB ile ilişkisel olmayan veri modellerini Mongoose üzerinden etkili şekilde yapılandırabiliyorum. JWT ile güvenli kullanıcı kimlik doğrulama sistemleri kurma konusunda yetkinim. Ayrıca POSTMAN kullanarak API’lerin test ve dökümantasyon süreçlerini yönetebiliyor, geliştirdiğim backend servislerini frontend uygulamalarla sorunsuz şekilde entegre edebiliyorum.",
       icon: <FaNodeJs className="text-4xl text-green-500" />,
       animation: animation4,
     },
     {
       title: "Frontend Geliştirme",
       description:
-        "React, Vite ve Tailwind CSS ile hızlı, modern ve mobil uyumlu arayüzler geliştiriyorum. UI/UX tasarıma önem veriyor, hızlı, responsive ve performans odaklı frontend projeler geliştirebilirim",
+        "React, Vite ve Tailwind CSS kullanarak modern, hızlı yüklenen ve tamamen mobil uyumlu (responsive) arayüzler geliştiriyorum. UI/UX tasarım prensiplerine önem vererek kullanıcı dostu, sade ya da gerektiğinde daha gösterişli ve etkileşimli web deneyimleri oluşturuyorum. Tasarımlarda animasyon ve etkileşimlere önem veriyorum. Framer Motion, Lottie gibi kütüphaneleri kullanarak kullanıcı deneyimini daha akıcı ve dikkat çekici hale getirebiliyorum.",
       icon: <FaReact className="text-4xl text-blue-600" />,
       animation: animation5,
     },
@@ -52,7 +52,7 @@ const Skills = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16" data-aos="fade-up">
           <h2 className="text-4xl font-bold text-lightGray mb-4">
-            Uzmanlık alanlarım
+            Neler Geliştirebilirim ?
           </h2>
         </div>
 

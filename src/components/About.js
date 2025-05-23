@@ -30,19 +30,19 @@ const About = () => {
       icon: <FaGamepad className="text-4xl" />,
       title: "Oyun Geliştirme",
       description:
-        "Unity ile 2D ve 3D oyun geliştirme konusunda deneyimliyim. Oyun mekanikleri, level tasarımı ve optimizasyon konularında kendimi geliştirmekteyim.",
+        "Oyun geliştirme konusunda deneyimliyim. Oyun mekanikleri ve optimizasyon konularında çok dikkatliyim. Sürekli yeni şeyler öğrenmeye çalışırım.",
     },
     {
       icon: <FaCode className="text-4xl" />,
       title: "Full Stack Geliştirme",
       description:
-        "React, Node.js ve modern web teknolojileri ile fullstack uygulama geliştirme konusunda bilgiliyim.",
+        "Modern web teknolojileri ile fullstack uygulama geliştirme konusunda bilgiliyim. Özellikle sunucu oluşturma ve yönetme alanına ilgim var.",
     },
     {
       icon: <FaLightbulb className="text-4xl" />,
-      title: "Yaratıcı Çözümler",
+      title: "Yenilikçi Çözümler",
       description:
-        "Karmaşık problemlere yaratıcı ve yenilikçi çözümler üretmeyi seviyorum. Her projede en iyi kullanıcı deneyimini sunmayı hedefliyorum.",
+        "Karmaşık problemlere kafa yormayı, yenilikçi ve kendime özgü çözümler üretmeyi seviyorum. Yazdığım her kodda daha iyi bir yazılımcı olmayı hedefliyorum.",
     },
   ];
 
@@ -57,14 +57,14 @@ const About = () => {
                 className="text-4xl font-bold text-lightGray mb-4"
                 data-aos="fade-up-left"
               >
-                Hakkımda
+                Ben Kimim ?
               </h2>
               <p
                 className="text-lightGray/80 max-w-2xl mx-auto"
                 data-aos="fade-up"
                 data-aos-delay="100"
               >
-                Balıkesir üniversitesi bilgisayar mühendisliği öğrencisiyim.
+                Merhaba ismim Enes Yürekli. Balıkesir üniversitesi bilgisayar mühendisliği 2. sınıf öğrencisiyim.
                 Tutkulu bir oyun geliştiricisi ve yeni teknolojilere açık bir
                 yazılımcıyım. Unity oyun motoru ve C# programlama dili ile hem
                 mobil hem masaüstü platformlarda 2D ve 3D oyunlar geliştirmekteyim.

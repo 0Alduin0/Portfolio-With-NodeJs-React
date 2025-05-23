@@ -26,17 +26,17 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
       {!showWelcome && (
         <>
         <div className="min-h-screen bg-gradient-to-br from-darkPurple via-darkBlue to-accentBlue animate-gradient-xy overflow-x-hidden">
-          <div className="relative">
+          <div className="relative h-full min-h-screen w-full">
             <div style={{ width: '100%', height: '100%', position: 'absolute',zIndex:0 }}><Particles
-    particleColors={['#ffffff', '#ffffff']}
-    particleCount={5000}
-    particleSpread={10}
-    speed={0.05}
-    particleBaseSize={100}
-    moveParticlesOnHover={false}
-    alphaParticles={false}
-    disableRotation={false}
-  /></div>
+      particleColors={['#fff']}
+      particleCount={5000}
+      particleSpread={10}
+      speed={0.05}
+      particleBaseSize={50}
+      moveParticlesOnHover={true}
+      alphaParticles={false}
+      disableRotation={false}
+    /></div>
             <Hero />
             <Navbar />
             

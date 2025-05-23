@@ -25,6 +25,10 @@ import {
   SiBootstrap,
   SiGit,
   SiGithub,
+  SiFirebase,
+  SiSocketdotio,
+  SiUnrealengine,
+  SiCplusplus,
 } from "react-icons/si";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -94,24 +98,25 @@ const Projects = () => {
       technologies: ["Unity", "C#", "Singleplayer"],
     },
     {
-      title: "Fps shooter oyunu",
+      title: "Unity Netcode Çalışması",
       description:
-        "karşınızdaki herkesi öldürmeye çalıştığınız çok oyunculu bir oyun",
+        "Unity oyun motorunda Netcode For Gameobjects ile multiplayer oyun prensiblerini ve mantığını geliştirdiğim bir proje.",
       images: [
-        require("../assets/images/screenshots8.jpg"),
-        require("../assets/images/screenshots9.jpg"),
-        require("../assets/images/screenshots10.jpg"),
-        require("../assets/images/screenshots11.jpg"),
+        require("../assets/images/screenshots12.png"),
+        require("../assets/images/screenshots13.png"),
+        require("../assets/images/screenshots14.png"),
       ],
-      github: "https://github.com/0Alduin0/Shooter-Game",
+      github: "https://github.com/0Alduin0/Netcode-For-Gameobjects.git",
       live: "https://d2fnysaq0ytmgw.cloudfront.net/public/content/media/image/page-under-construction.jpg?VersionId=MK1bzfxBR4nMMRShIV8_4rIsbsdxRs68",
-      technologies: ["Unity", "C#", "PhotonNetwork", "Multiplayer"],
+      technologies: ["Unity", "C#", "Netcode For Gameobjects", "Multiplayer"],
     },
   ];
 
   const technologies = [
-    { name: "Unity", icon: <SiUnity className="text-4xl text-[#000000]" /> },
-    { name: "C#", icon: <SiCsharp className="text-4xl text-[#68217A]" /> },
+    { name: "Unity", icon: <SiUnity className="text-4xl" style={{ color: "#181C20" }} /> },
+    { name: "C#", icon: <SiCsharp className="text-4xl text-[#239120]" /> },
+    { name: "Unreal Engine 5", icon: <SiUnrealengine className="text-4xl" style={{ color: "#181818" }} /> },
+    { name: "C++", icon: <SiCplusplus className="text-4xl text-[#00599C]" /> },
     { name: "Html", icon: <SiHtml5 className="text-4xl text-[#E34F26]" /> },
     { name: "Css", icon: <SiCss3 className="text-4xl text-[#1572B6]" /> },
     {
@@ -136,7 +141,7 @@ const Projects = () => {
       icon: <SiTailwindcss className="text-4xl text-[#06B6D4]" />,
     },
     { name: "Python", icon: <SiPython className="text-4xl text-[#3776AB]" /> },
-    { name: "VsCode", icon: <SiVsco className="text-4xl text-[#007ACC]" /> },
+    { name: "VsCode", icon: <SiVsco className="text-4xl text-[#3EA6E2]" /> },
     {
       name: "JetBrains",
       icon: <SiJetbrains className="text-4xl text-[#000000]" />,
@@ -145,7 +150,12 @@ const Projects = () => {
       name: "Bootstrap",
       icon: <SiBootstrap className="text-4xl text-[#7952B3]" />,
     },
+    {
+      name: "Firebase",
+      icon: <SiFirebase className="text-4xl text-[#FFCA28]" />,
+    },
     { name: "Git", icon: <SiGit className="text-4xl text-[#F05032]" /> },
+    { name: "Socket.IO", icon: <SiSocketdotio className="text-4xl text-[#010101]" /> },
     { name: "Github", icon: <SiGithub className="text-4xl text-[#181717]" /> },
   ];
 
@@ -158,14 +168,7 @@ const Projects = () => {
       image: require("../assets/images/unity-essentials-pathway.png"),
       link: "https://www.credly.com/badges/68c339d6-b0fc-4ea9-9955-e16cc21e3aae",
     },
-    {
-      id: 2,
-      title: "Unity C#, Firebase",
-      issuer: "A. Gökhan SATMAN",
-      date: "2024",
-      image: require("../assets/images/unity-essentials-pathway.png"),
-      link: "https://www.credly.com/badges/68c339d6-b0fc-4ea9-9955-e16cc21e3aae",
-    },
+    
 
     // Diğer sertifikalarınızı buraya ekleyebilirsiniz
   ];
@@ -214,11 +217,8 @@ const Projects = () => {
           data-aos-duration="800"
         >
           <h2 className="text-4xl font-bold text-lightGray mb-4">
-            Projelerim ve yeteneklerim
+            Projelerim
           </h2>
-          <p className="text-lightGray/80 max-w-2xl mx-auto">
-            Geliştirdiğim projeler ve kullanabildiğim teknolojiler
-          </p>
         </div>
 
         {/* Tab Buttons */}
@@ -368,7 +368,7 @@ const Projects = () => {
               <div
                 key={index}
                 data-aos="fade-up"
-                data-aos-delay={index * 100}
+                data-aos-delay={index * 10}
                 className="bg-cardBg/50 p-3 sm:p-4 md:p-6 rounded-lg text-center border border-cardBorder/50 hover:border-borderAccent/70 transition-all duration-300 animate-float-3d hover:animate-pulse-glow hover:animate-scale-up"
               >
                 <div className="flex justify-center mb-2 sm:mb-3 md:mb-4">
