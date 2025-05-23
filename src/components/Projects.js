@@ -167,6 +167,14 @@ const Projects = () => {
       image: require("../assets/images/unity-essentials-pathway.png"),
       link: "https://www.credly.com/badges/68c339d6-b0fc-4ea9-9955-e16cc21e3aae",
     },
+    {
+      id: 2,
+      title: "Python (Basic) Certificate",
+      issuer: "HackerRank",
+      date: "2025",
+      image: require("../assets/images/HackerRankCertficate.png"),
+      link: "https://www.hackerrank.com/certificates/iframe/be9b769f1dd3",
+    },
     
 
     // Diğer sertifikalarınızı buraya ekleyebilirsiniz
